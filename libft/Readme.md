@@ -1,7 +1,7 @@
 # WIP
 # **42 LIBFT**
 # Table of Contents
-# [About](About) --- [Functions](Functions) --- Compile
+# [About](#About) --- [Functions](#Functions) --- Compile
 ***
 <a id="About"></a>
 ## About 🚀
