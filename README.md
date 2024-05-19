@@ -11,5 +11,5 @@ https://profile.intra.42.fr/
 
 # PROJECT LIST
 | Circle | Project | Language | Topics |
-| ------ | ------- | -------- | ------ |
-| 0️⃣ | Libft| C | *Library <br /> Makefile <br /> Lists* |
+| ------ | ------- | :------: | ------ |
+| 0️⃣ | Libft| C |  *Library <br /> Makefile <br /> Lists* |
