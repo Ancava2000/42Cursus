@@ -10,6 +10,6 @@ Begin Date: 08/04/2024
 https://profile.intra.42.fr/
 
 # PROJECT LIST
-| Circle | Project | Language | Topics |
-| ------ | ------- | :------: | ------ |
-| 0️⃣ | Libft| C |  *Library <br /> Makefile <br /> Lists* |
+| Circle | Project | Language | Topics | COMPLETE |
+| ------ | ------- | :------: | ------ | :------: |
+| 0️⃣ | Libft| C |  *Library <br /> Makefile <br /> Lists* | 01/05/2024 |
