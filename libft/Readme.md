@@ -1,13 +1,11 @@
 # WIP
 # **42 LIBFT**
 # Table of Contents
-# [About](id-About) --- [Functions](id-Functions) --- Compile
+# [About](About) --- [Functions](Functions) --- Compile
 ***
-<div id='id-About'/>
-  
+<a id="About"></a>
 ## About 🚀
 ```aaaa```
 
-<div id='id-Functions'/>
-  
+<a id="Functions"></a>
 ## Functions
