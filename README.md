@@ -13,4 +13,4 @@ https://profile.intra.42.fr/
 | Circle | Project | Language | Topics | COMPLETE |
 | ------ | ------- | :------: | ------ | :------: |
 | 0️⃣ | [Libft](https://github.com/Ancava2000/42Cursus/tree/main/libft)| C | ```Library``` <br /> ```Makefile``` <br /> ```Lists``` | 01/05/2024 |
-| 1️⃣ | [ft_printf](https://github.com/Ancava2000/42Cursus/tree/main/printf)| C | Variadic Functions <br /> Makefile <br /> Pointers | 09/05/2024 |
+| 1️⃣ | [ft_printf](https://github.com/Ancava2000/42Cursus/tree/main/printf)| C | ```Variadic Functions``` <br /> ```Makefile``` <br /> ```Pointers``` | 09/05/2024 |
