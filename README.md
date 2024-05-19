@@ -2,6 +2,10 @@
 
 # 42CURSUS🖥️
 ![alt text](https://media.licdn.com/dms/image/D4D12AQH87JCWFrJa0w/article-cover_image-shrink_600_2000/0/1663149034083?e=2147483647&v=beta&t=WTDV1QJflRlzNIOafKgUuYaQANdUDvRobPYfe2Wd4bI)
+
+🇪🇦 En 42 Málaga, los estudiantes aprenden a aprender y no solo se forman en habilidades técnicas, sino también a desarrollar aptitudes como el esfuerzo, la tolerancia a la frustración, la capacidad de superación y el trabajo en equipo, muy valoradas y fundamentales para cualquier empresa hoy en día.
+
+🇺🇸 At 42 Málaga, students learn to learn and are not only trained in technical skills, but also to develop skills such as effort, tolerance for frustration, the ability to improve and teamwork, highly valued and fundamental for any company. nowadays.
 ***
 
 # PROFILE INFO👷‍♀️
