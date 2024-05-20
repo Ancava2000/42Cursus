@@ -20,7 +20,7 @@ WIP
 
 ```C programming can be very tedious when one doesn’t have access to those highly useful standard functions. This project gives you the opportunity to re-write those functions, understand them, and learn to use them. This library will help you for all your future C projects.``` 
 
-In this project, you'll have to learn about memory allocation, malloc anD free functions and how structs work. I recommend doing the bonus part (structs) because you'll use these type of functions in future projects. Lastly, you should add bit by bit every function that you are going to code, so you can create a pretty complete library in C. :comet:GOOD LUCK!:comet:
+In this project, you'll have to learn about memory allocation, malloc and free functions, and how structs work. I recommend doing the bonus part (structs) because you'll use these type of functions in future projects. Lastly, you should add bit by bit every function that you are going to code, so you can create a pretty complete library in C. :comet:GOOD LUCK!:comet:
 ***
 
 <a id="Functions"></a>
