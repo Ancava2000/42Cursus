@@ -24,7 +24,8 @@ Begin Date: 08/04/2024
 https://profile.intra.42.fr/
 
 # PROJECT LIST
-| Circle | Project | Language | Topics | COMPLETE |
-| ------ | ------- | :------: | ------ | :------: |
-| 0️⃣ | [Libft](https://github.com/Ancava2000/42Cursus/tree/main/libft)| C | ```Library``` <br /> ```Makefile``` <br /> ```Lists``` | 01/05/2024 |
-| 1️⃣ | [ft_printf](https://github.com/Ancava2000/42Cursus/tree/main/printf)| C | ```Variadic Functions``` <br /> ```Makefile``` <br /> ```Pointers``` | 09/05/2024 |
+| Circle | Project | Language | Subjects | Topics | COMPLETE |
+| ------ | ------- | :------: | -------- | ------ | :------: |
+| 0️⃣ | [Libft](https://github.com/Ancava2000/42Cursus/tree/main/libft)| C | Your own library in C | ```Library``` <br /> ```Makefile``` <br /> ```Lists``` | 01/05/2024 |
+| 1️⃣ | [ft_printf](https://github.com/Ancava2000/42Cursus/tree/main/printf)| C | Doing the printf function |```Variadic Functions``` <br /> ```Makefile``` <br /> ```Pointers``` | 09/05/2024 |
+| 1️⃣ | Born2beroot | Virtual Machine | Build a Virtual Machine witt Debian. I sugest the tutorial made by [gemartin99](https://github.com/gemartin99/Born2beroot-Tutorial)|```Network``` <br /> ```Server``` <br /> ```SSH``` | 09/05/2024 |
