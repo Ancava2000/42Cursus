@@ -184,7 +184,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Prototype**             | ``` int isalnum(int c);```     |
 | **Parameters**            | ```c:``` Character to be checked.|
 | **Return Value**          |The isdigit() function returns non-zero if c is a alphanumeric character; otherwise returns 0.|
-| **Description**           |checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c))|
+| **Description**           |It checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c))|
 
    - [**Isascii**]()
 
@@ -193,7 +193,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Prototype**             | ``` int isascii(int c);```     |
 | **Parameters**            | ```c:``` Character to be checked.|
 | **Return Value**          |The isascii() function returns non-zero if c fits into the ASCII character set; otherwise returns 0.|
-| **Description**           |The isdigit() function is used to check whether a character is a 7-bit unsigned char value that fits into the ASCII character set.|
+| **Description**           |The isascii() function is used to check whether a character is a 7-bit unsigned char value that fits into the ASCII character set.|
 
    - [**Isprint**]()
 
@@ -201,7 +201,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Prototype**             | ``` int isdigit(int c);```     |
 | **Parameters**            | ```c:``` Character to be checked.|
-| **Return Value**          |The isdigit() function returns non-zero if c is a printable character; otherwise returns 0.|
+| **Return Value**          |The isprint() function returns non-zero if c is a printable character; otherwise returns 0.|
 | **Description**           |The isprint() functions is used to check for any printable character including space.|
 
    - [**Toupper**]()
