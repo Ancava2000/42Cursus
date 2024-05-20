@@ -264,4 +264,4 @@ typedef struct    s_list
 
 Thanks for watching my libft project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
 
-![Texto alternativo](https://giphy.com/stickers/Mightyhands-mighty-thanks-a-bunch-hands-Z98f0dveCP2nEELmw5)
+![Alt text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHNidHh0cjl3bW9vamhoMmprb2NoemdoY241aWd5dDMzNm5semFkdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WfBZwNA6XSjphkYkzN/giphy.gif)
