@@ -12,6 +12,7 @@ WIP
 
    - [Commands]()
    - [Compile]()
+4. [Resources](#Res)
 ***
 <a id="About"></a>
 ## About 🚀
@@ -406,6 +407,14 @@ typedef struct    s_list
 
 <a id="Makefile"></a>
 ## Makefile
+
+
+<a id="Res"></a>
+## Resources
+
+- Structs:
+- Libft tutorial:
+- ...
 
 Thanks for watching my libft project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
 
