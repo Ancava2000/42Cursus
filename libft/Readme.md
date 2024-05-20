@@ -33,36 +33,181 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 ```
    - [**Memset**]()
 
-| **Function Name**     | ft_memset                                                                                                                                                                    |
+| **Function Name**         | ft_memset                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Prototype**             | ```void *memset(void *dest, int c, size_t n);```                                                                                                        |
 | **Parameters**            | ```*dest:``` Pointer to destination. <br /> ```c:``` Character to set. <br /> ```n:``` Number of bytes to be set to the value. |
-| **Return Value**        | The memset() function returns a pointer to the memory area s.   |
+| **Return Value**          | The memset() function returns a pointer to the memory area s.   |
 | **Description**           | The memset() function fills the first n bytes of the memory area pointed to by s with the constant byte c. |
 
-   - [bzero]
-   - [memcpy]
-   - [memccpy]
-   - [memmove]
-   - [memchr]
-   - [memcmp]
-   - [strlen]
-   - [strlcpy]
-   - [strlcat]
-   - [strchr]
-   - [strrchr]
-   - [strnstr]
-   - [strncmp]
+   - [**Bzero**]()
+
+| **Function Name**         | ft_bzero                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```void bzero(void* s, size_t n);```                               |
+| **Parameters**            | ```*s:``` The starting address in the byte area.  <br /> ```n:``` The size of the data.   |
+| **Return Value**          | None.  |
+| **Description**           | The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area. |
+     
+   - [**Memcpy**]()
+
+| **Function Name**         | ft_memcpy                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```void *memcpy(void *s1, const void * s2, size_t n);```                   |
+| **Parameters**            | ```*s1:``` New buffer. <br /> ```s2:``` Buffer to copy from. <br /> ```n:``` Number of characters to copy.   |
+| **Return Value**          | The memcpy() function returns a pointer to dest.  |
+| **Description**           |  The memcpy() function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use memmove(3) if the memory areas do overlap. |
+
+   - [**Memccpy**]()
+
+| **Function Name**         | ft_memccpy                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```void *memccpy (void *src, const void *dest, int c, size_t n); ```                    |
+| **Parameters**            | ```*dest:``` Pointer to destination. <br /> ```src:``` Pointer to source object. <br /> ```c:``` The value to be copied. <br /> ```n:``` Number of characters to copy.   |
+| **Return Value**          | The memccpy() function returns a pointer to the next character in dest after c, or NULL if c was not found in the first n characters of src.  |
+| **Description**           |  The memccpy() function copies no more than n bytes from memory area src to memory area dest, stopping when the character c is found. If the memory areas overlap, the results are undefined. |
+
+   - [**Memmove**]()
+
+| **Function Name**         | ft_memmove                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```void *memccpy(void dest, const void src, int c, size_t n);```        |
+| **Parameters**            | ```*dest:``` Pointer to destination. <br /> ```src:``` Pointer to source object. <br /> ```n:``` Number of characters to copy.   |
+| **Return Value**          | The memmove() function shall return dest. No return value is reserved to indicate an error. |
+| **Description**           |  The memmove() function copies n bytes from memory area src to memory area dest. The memory areas may overlap: copying takes place as though the bytes in src are first copied into temporary array that does not overlap src or dest, and the bytes are then copied from the temporary array to dest.|
+
+   - [**Memchr**]()
+
+| **Function Name**         | ft_memchr                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```void *memchr(const void s, int c, size_t n);```        |
+| **Parameters**            | ```*s:``` Pointer to buffer. <br /> ```c:``` Character to look for. <br /> ```n:``` Number of characters to check.   |
+| **Return Value**          | The memchr() and memrchr() functions return a pointer to the matching byte or NULL if the character does not occur in the given memory area.|
+| **Description**           | The memchr() function scans the initial n bytes of the memory area pointed to by s for the first instance of c. Both c and the bytes of the memory area pointed to by s are interpreted as unsigned char.|
+
+   - [**Memcmp**]
+
+| **Function Name**         | ft_memcmp                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```int memcmp(const void s1, const void s2, size_t n);```        |
+| **Parameters**            | ```*s1:``` First string. <br /> ```s2:``` Second string. <br /> ```n:``` Number of characters to compare.   |
+| **Return Value**          | The memcmp() function returns an integer less than, equal to, or greater than zero if the first n bytes of s1 is found, respectively, to be less than, to match, or be greater than the first n bytes of s2. For a nonzero return value, the sign is determined by the sign of the difference between the first pair of bytes (interpreted as unsigned char) that differ in s1 and s2. If n is zero, the return value is zero.|
+| **Description**           | The memcmp() function compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2.|
+
+   - [**Strlen**]()
+
+| **Function Name**         | ft_strlen                                                                                                                                                                    |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` size_t strlen(const char *s);```        |
+| **Parameters**            | ```*s:``` Null-terminated string. |
+| **Return Value**          | The strlen() function returns the number of bytes in the string pointed to by s.|
+| **Description**           | The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').|
+
+   - [**Strlcpy**]
+
+| **Function Name**         | ft_strlcpy                                                                                                                                                                   |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```size_t strlcpy(char *dst, const char *src, size_t n);```     |
+| **Parameters**            | ```*dst:``` Pointer to the string to which the src is to be appended. <br /> ```src:``` Pointer to source. <br /> ```n:``` Total number of characters to copy. |
+| **Return Value**          | The strlcpy() function returns the total length of the string that would have been copied if there was unlimited space. This might or might not be equal to the length of the create string actually, depending on whether there was enough space. This means that you can call strlcpy() once to find out how much space is required, then allocate it if you do not have enough, and finally call strlcpy() a second time to do the required copy.|
+| **Description**           | Declared in string.h, the strlcpy() function copies up to size-1 characters from the NUlL-terminated string src to dst.|
+
+   - [**Strlcat**]()
+
+| **Function Name**         | ft_strlcat                                                                                                                                                                   |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```char strlcat(char dst, const char * src, size_t n);```     |
+| **Parameters**            | ```*dst:``` Pointer to the string to which the src is to be appended. <br /> ```src:``` Pointer to source. <br /> ```n:```  Refers to the entire buffer where the string or character sequence is contained. |
+| **Return Value**          | The strlcpy() function returns the length of the total string they tried to create.|
+| **Description**           |These functions copy and catenate the input string into a destination string. If the destination buffer, limited by its size, isn't large enough to hold the copy, the resulting string is truncated (but it is guaranteed to be null-terminated).  |
+
+   - [**Strchr**]()
+
+| **Function Name**         | ft_strchr                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```char strchr(const char *s,int c);```     |
+| **Parameters**            | ```*s:``` Null-terminated source string <br /> ```n:``` Character to be located. |
+| **Return Value**          |The strchr() and strrchr() functions return a pointer to the matched character or NULL if the character is not found. The terminating null byte is considered part of the string, so that if c is specified as '\0', these functions return a pointer to the terminator.|
+| **Description**           | The strchr() function returns a pointer to the first occurrence of the character c in the string s.|
+
+   - [**Strrchr**]()
+
+| **Function Name**         | ft_strrchr                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```char strrchr(const char *s,int c);```     |
+| **Parameters**            | ```*s:``` Null-terminated source string <br /> ```n:``` Character to be located. |
+| **Return Value**          |The strchr() and strrchr() functions return a pointer to the matched character or NULL if the character is not found. The terminating null byte is considered part of the string, so that if c is specified as '\0', these functions return a pointer to the terminator.|
+| **Description**           | The strchr() function returns a pointer to the last occurrence of the character c in the string s.|
+
+   - [**Strnstr**]()
+
+| **Function Name**         | ft_strnstr                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ```char *strnstr(const char *haystack, const char *needle, size_t len);```     |
+| **Parameters**            | ```*haystack:``` String where the first occurrence of needle is search. <br /> ```*needle:``` String to be compared. <br /> ```len:``` Number of character to be search. |
+| **Return Value**          |If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to	the first character of the first occurrence of needle is returned.|
+| **Description**           | The strnstr() function finds the first occurrence of the substring needle in the string haystack, where not more than len characters are	searched. The terminating null bytes ('\0') are not compared. |
+
+   - [**Strncmp**]()
+
+| **Function Name**         | ft_strncmp                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int strncmp(const char *s1, const char *s2, size_t n);```     |
+| **Parameters**            | ```*s1:``` First string to be compared <br /> ```*s2:``` Second string to be compared. <br /> ```n:``` Maximum umber of character to be compared. |
+| **Return Value**          | Upon successful completion, strncmp() shall return an integer greater than, equal to, or less than 0, if the possibly null-terminated array pointed to by s1 is greater than, equal to, or less than the possibly null-terminated array pointed to by s2 respectively.|
+| **Description**           |The strncmp() function shall compare not more than n bytes (bytes that follow a NUL character are not compared) from the array pointed to by s1 to the array pointed to by s2.|
+
    - [atoi]
    - [isalpha]
-   - [isdigit]
-   - [isalnum]
-   - [isascii]
-   - [isprint]
-   - [toupper]
-   - [tolower]
-   - [calloc]
-   - [strdup]
+
+| **Function Name**         | ft_isalpha                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int isalpha(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The isalpha() function returns non-zero if c is an alphabetic character; otherwise returns 0.|
+| **Description**           |The isalpha() function is used to check whether a character is an alphabet or not. The function is defined in the ctype.h header file.|
+
+   - [**Isdigit**]()
+
+
+| **Function Name**         | ft_isdigit                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int isdigit(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The isdigit() function returns non-zero if c is a digit; otherwise returns 0.|
+| **Description**           |The isdigit() function is used to check whether a character is a digit or not. The function is defined in the ctype.h header file.|
+
+   - [**Isalnum**]()
+
+| **Function Name**         | ft_isalnum                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int isalnum(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The isdigit() function returns non-zero if c is a alphanumeric character; otherwise returns 0.|
+| **Description**           |checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c))|
+
+   - [**Isascii**]()
+
+| **Function Name**         | ft_isascii                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int isascii(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The isascii() function returns non-zero if c fits into the ASCII character set; otherwise returns 0.|
+| **Description**           |The isdigit() function is used to check whether a character is a 7-bit unsigned char value that fits into the ASCII character set.|
+
+   - [**Isprint**]()
+
+| **Function Name**         | ft_isprint                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int isdigit(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The isdigit() function returns non-zero if c is a printable character; otherwise returns 0.|
+| **Description**           |The isprint() functions is used to check for any printable character including space.|
+
+   - [**Toupper**]()
+   - [**Tolower**]()
+   - [**Calloc**]()
+   - [**Strdup**]()
 
 <a id="Add_func"></a>
 ### Additional functions
