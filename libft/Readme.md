@@ -158,8 +158,8 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | Upon successful completion, strncmp() shall return an integer greater than, equal to, or less than 0, if the possibly null-terminated array pointed to by s1 is greater than, equal to, or less than the possibly null-terminated array pointed to by s2 respectively.|
 | **Description**           |The strncmp() function shall compare not more than n bytes (bytes that follow a NUL character are not compared) from the array pointed to by s1 to the array pointed to by s2.|
 
-   - [atoi]
-   - [isalpha]
+   - [**Atoi**]()
+   - [**Isalpha**]()
 
 | **Function Name**         | ft_isalpha                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
