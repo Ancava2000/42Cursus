@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="660" height="300" src="https://github.com/Ancava2000/42Cursus/assets/160865430/44504434-39ee-4f75-9538-8592c64d71b1">
+  <img width="560" height="400" src="https://github.com/Ancava2000/42Cursus/assets/160865430/44504434-39ee-4f75-9538-8592c64d71b1">
 </p>
 
 ## Table of Contents
