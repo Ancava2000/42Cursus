@@ -99,3 +99,12 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	return (token_v);
 }
+
+/*
+int main ()
+{
+	const char *str= "Why,are,we,here"; 
+ 	char **split_str = ft_split(str, ',');   Returns: The split_str with the split substrings using ',' as the delimiter ["Why", "are", "we", "here"].
+  	return (0);
+}
+*/
