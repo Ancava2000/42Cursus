@@ -22,3 +22,16 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst -> next;
 	}
 }
+
+/*
+void print_content(void *content)
+{
+	printf("Content: %s/n", (char *)content);
+}
+int main ()
+{
+	t_list *lst = ft_lstnew("Hello");
+	ft_lstadd_back(&lst, ft_lstnew("World"));
+	ft_lstiter(lst, print_content);  Returns: it will iterate every node and aplly the function indicated in the second parameter. In this case, it prints "Hello" and "World".
+}
+*/
