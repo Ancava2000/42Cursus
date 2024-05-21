@@ -441,7 +441,7 @@ A *Makefile* is a tool that sets a set of rules, like a script does, that helps 
    - Compile into a specific named ```library.```
    - Get its ```source files``` from an indicated directory and with their last modifide dates.
    - Compile the ```.c files``` with ```cc``` and with ```-Wall -Wextra -Werror flags``` in that order.
-   - Implement the rules ```clean``` (remove all the temporary generated files), ```fclean``` (make clean plus `clean the executable), ```re``` (make fclean followed by make all), ```all``` (what the central or default task of a Makefile is customarily called) and ```.PHONY``` (you can explicitly declare targets, like clean or all, to be phony by making it a prerequisite. This is to avoid compiling errors in the case that a file in the same directory is named the same as a target).
+   - Implement the rules ```clean``` (remove all the temporary generated files), ```fclean``` (make clean plus `clean the executable), ```re``` (make fclean followed by make all), ```all``` (what the central or default task of a Makefile is customarily called) and ```PHONY``` (you can explicitly declare targets, like clean or all, to be phony by making it a prerequisite. This is to avoid compiling errors in the case that a file in the same directory is named the same as a target).
    - Avoid ```relink``` (when we type multiple timess the command make there won't be a new recompilation).
 
 <a id="Commands"></a>
@@ -467,9 +467,9 @@ make fclean
 <a id="Res"></a>
 ## Resources
 
-- Lists: 
-- Libft: 
-- Makefile: 
+- **Lists:** Oceano's video about [linked lists](https://www.youtube.com/watch?v=mkZYMKwKkvI&ab_channel=Oceano)
+- **Libft:** For your first steps in the cursus I highly recommend the website [NSHAHID](https://42.nauman.cc/) and in the case that you are suffering with the [[split function](https://www.youtube.com/watch?v=rn0B-ALufrw&ab_channel=Oceano) like I did. 
+- **Makefile:** [Tutorial by gleal42](https://github.com/gleal42/Makefile-Tutorial), [Cheatsheet](https://devhints.io/makefile)
 
 Thanks for watching my libft project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
 
