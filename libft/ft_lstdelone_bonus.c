@@ -19,3 +19,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	del (lst -> content);
 	free (lst);
 }
+
+/*
+void del_content(void *content)
+    free(content);
+int main ()
+{
+	t_list *lst = ft_lstnew("Hello");   Creates a new node (lst) with the content "Hello".
+	ft_lstdelone(lst, del_content);    Returns: It frees the content "Hello", the node *lst, and it sets the node to NULL.
+	return (0);
+}
+*/
