@@ -1,5 +1,7 @@
-WIP
-# **42 LIBFT**
+<p align="center">
+  <img width="660" height="300" src="https://github.com/Ancava2000/42Cursus/assets/160865430/44504434-39ee-4f75-9538-8592c64d71b1">
+</p>
+
 ## Table of Contents
 1. [About](#About)
 2. [Functions](#Functions)
@@ -468,7 +470,7 @@ make fclean
 ## Resources
 
 - **Lists:** Oceano's video about [linked lists](https://www.youtube.com/watch?v=mkZYMKwKkvI&ab_channel=Oceano)
-- **Libft:** For your first steps in the cursus I highly recommend the website [NSHAHID](https://42.nauman.cc/) and in the case that you are suffering with the [[split function](https://www.youtube.com/watch?v=rn0B-ALufrw&ab_channel=Oceano) like I did. 
+- **Libft:** For your first steps in the cursus I highly recommend the website [NSHAHID](https://42.nauman.cc/) and in the case that you are suffering with the [split function](https://www.youtube.com/watch?v=rn0B-ALufrw&ab_channel=Oceano) like I did. 
 - **Makefile:** [Tutorial by gleal42](https://github.com/gleal42/Makefile-Tutorial), [Cheatsheet](https://devhints.io/makefile)
 
 Thanks for watching my libft project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
