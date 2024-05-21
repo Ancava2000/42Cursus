@@ -24,3 +24,11 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(ptr, size * count);
 	return (ptr);
 }
+
+/*
+int main ()
+{	
+	int *numbers = ft_calloc(25, sizeof(int));   Returns: The function allocates memory for an array of 25 integers and initializes the memory to zeros.
+ 	return (0);
+}
+*/
