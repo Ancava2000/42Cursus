@@ -40,3 +40,13 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (new);
 	}
 }
+
+/*
+int main ()
+{
+	char str[] = "ssssHello, World!ssss";
+	char set[] = "s";
+	ft_strtrim(str, set);   Returns: A new string without the char set ("s") found at the beginning and the end of the input string ("Hello, World).
+	return (0);
+}
+*/
