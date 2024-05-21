@@ -31,3 +31,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+/*
+int main ()
+{
+	char *s1 = "Holb";
+	char *s2 = "Hola";
+	ft_memcmp(arr1, arr2, 5);   Returns: 1, the ascii difference between b vs a.
+	int a = 123;
+	int b = 123;
+	ft_memcmp(a, b, 3);   Returns: 0, because they are both the same int.
+	return (0);
+}
+*/
