@@ -28,3 +28,17 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 	*lst = NULL;
 }
+
+/*
+void del_content(void *content)
+{
+    free(content);
+}
+int main ()
+{
+	t_list *lst = ft_lstnew("Hello");
+	ft_lstadd_back(&lst, ft_lstnew("World"));
+	ft_lstclear(&lst, del_content);   Returns: Both elements of the linked list are freed, including their content, and the ‘lst’ pointer is set to NULL, indicating that the list is empty.
+ 	Return (0);
+}
+*/
