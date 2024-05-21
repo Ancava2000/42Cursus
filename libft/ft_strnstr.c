@@ -37,3 +37,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
+
+/*
+int main ()
+{
+	char str[] = "Hello, World!";
+	char sub[] = "World";
+	ft_strnstr(str, sub, sizeof(str));  Returns: Pointer to the position "World!" withing the str.
+	return (0);
+}
+*/
