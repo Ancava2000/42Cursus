@@ -2,7 +2,7 @@
   <img width="560" height="200" src="https://github.com/Ancava2000/42Cursus/assets/160865430/44504434-39ee-4f75-9538-8592c64d71b1">
 </p>
 
-## Table of Contents
+## Table of Contents 🔖
 1. [About](#About)
 2. [Functions](#Functions)
 
@@ -26,7 +26,7 @@ In this project, you'll have to learn about memory allocation, malloc and free f
 ***
 
 <a id="Functions"></a>
-## Functions
+## Functions 📋
 <a id="Libc_func"></a>
 ### Libc functions
 ```
@@ -437,7 +437,7 @@ typedef struct    s_list
 | **Description**           | Deletes and frees the given element and every successor of that element, using the function ’del’ and free(3). Finally, the pointer to the list must be set to NULL. |
 
 <a id="Makefile"></a>
-## Makefile
+## Makefile ♻️
 
 A *Makefile* is a tool that sets a set of rules, like a script does, that helps us in the proccess of compiling our files into an ```executable``` (only in compiled languages like c). 42 in particular asks for a Makefile that can:
    - Compile into a specific named ```library.```
@@ -467,7 +467,7 @@ make fclean
 ```
 
 <a id="Res"></a>
-## Resources
+## Resources 📹
 
 - **Lists:** Oceano's video about [linked lists](https://www.youtube.com/watch?v=mkZYMKwKkvI&ab_channel=Oceano)
 - **Libft:** For your first steps in the cursus I highly recommend the website [NSHAHID](https://42.nauman.cc/) and the [split function](https://www.youtube.com/watch?v=rn0B-ALufrw&ab_channel=Oceano) in the case that you are suffering with it like I did. 
