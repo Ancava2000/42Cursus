@@ -37,3 +37,13 @@ char	*ft_strdup(const char *s1)
 	new[i] = '\0';
 	return (new);
 }
+/*
+int main(void)
+{
+   char *string = "this is a copy";
+   char *newstr;
+   if ((newstr = strdup(string)) != NULL)
+      printf("The new string is: %s\n", newstr);   Returns: The copy of string in newstr. (The new string is: this is a copy).
+   return 0;
+}
+*/
