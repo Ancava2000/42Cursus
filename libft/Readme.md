@@ -113,25 +113,25 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | The strlcpy() function returns the length of the total string they tried to create.|
 | **Description**           |These functions copy and catenate the input string into a destination string. If the destination buffer, limited by its size, isn't large enough to hold the copy, the resulting string is truncated (but it is guaranteed to be null-terminated).  |
 
-   - [**Strchr**]()
+   - [**Strchr**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strchr.c)
 
 | **Function Name**         | ft_strchr                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**             | ```char strchr(const char *s,int c);```     |
+| **Prototype**             | ```char strchr(const char *s, int c);```     |
 | **Parameters**            | ```*s:``` Null-terminated source string <br /> ```c:``` Character to be located. |
 | **Return Value**          |The strchr() and strrchr() functions return a pointer to the matched character or NULL if the character is not found. The terminating null byte is considered part of the string, so that if c is specified as '\0', these functions return a pointer to the terminator.|
 | **Description**           | The strchr() function returns a pointer to the first occurrence of the character c in the string s.|
 
-   - [**Strrchr**]()
+   - [**Strrchr**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strrchr.c)
 
 | **Function Name**         | ft_strrchr                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**             | ```char strrchr(const char *s,int c);```     |
+| **Prototype**             | ```char strrchr(const char *s, int c);```     |
 | **Parameters**            | ```*s:``` Null-terminated source string <br /> ```c:``` Character to be located. |
 | **Return Value**          |The strchr() and strrchr() functions return a pointer to the matched character or NULL if the character is not found. The terminating null byte is considered part of the string, so that if c is specified as '\0', these functions return a pointer to the terminator.|
-| **Description**           | The strchr() function returns a pointer to the last occurrence of the character c in the string s.|
+| **Description**           | The strrchr() function returns a pointer to the last occurrence of the character c in the string s.|
 
-   - [**Strnstr**]()
+   - [**Strnstr**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strnstr.c)
 
 | **Function Name**         | ft_strnstr                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -140,7 +140,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to	the first character of the first occurrence of needle is returned.|
 | **Description**           | The strnstr() function finds the first occurrence of the substring needle in the string haystack, where not more than len characters are	searched. The terminating null bytes ('\0') are not compared. |
 
-   - [**Strncmp**]()
+   - [**Strncmp**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strncmp.c)
 
 | **Function Name**         | ft_strncmp                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -149,7 +149,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | Upon successful completion, strncmp() shall return an integer greater than, equal to, or less than 0, if the possibly null-terminated array pointed to by s1 is greater than, equal to, or less than the possibly null-terminated array pointed to by s2 respectively.|
 | **Description**           |The strncmp() function shall compare not more than n bytes (bytes that follow a NUL character are not compared) from the array pointed to by s1 to the array pointed to by s2.|
 
-   - [**Atoi**]()
+   - [**Atoi**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_atoi.c)
 
 | **Function Name**         | ft_atoi                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -158,7 +158,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | The converted value or 0 on error.|
 | **Description**           | The atoi() function converts the initial portion of the string pointed to by str to int.|
 
-   - [**Isalpha**]()
+   - [**Isalpha**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_isalpha.c)
 
 | **Function Name**         | ft_isalpha                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -167,7 +167,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The isalpha() function returns non-zero if c is an alphabetic character; otherwise returns 0.|
 | **Description**           |The isalpha() function is used to check whether a character is an alphabet or not. The function is defined in the ctype.h header file.|
 
-   - [**Isdigit**]()
+   - [**Isdigit**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_isdigit.c)
 
 | **Function Name**         | ft_isdigit                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -176,7 +176,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The isdigit() function returns non-zero if c is a digit; otherwise returns 0.|
 | **Description**           |The isdigit() function is used to check whether a character is a digit or not. The function is defined in the ctype.h header file.|
 
-   - [**Isalnum**]()
+   - [**Isalnum**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_isalnum.c)
 
 | **Function Name**         | ft_isalnum                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -185,7 +185,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The isdigit() function returns non-zero if c is a alphanumeric character; otherwise returns 0.|
 | **Description**           |It checks for an alphanumeric character; it is equivalent to (isalpha(c) || isdigit(c))|
 
-   - [**Isascii**]()
+   - [**Isascii**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_isascii.c)
 
 | **Function Name**         | ft_isascii                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -194,7 +194,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The isascii() function returns non-zero if c fits into the ASCII character set; otherwise returns 0.|
 | **Description**           |The isascii() function is used to check whether a character is a 7-bit unsigned char value that fits into the ASCII character set.|
 
-   - [**Isprint**]()
+   - [**Isprint**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_isprint.c)
 
 | **Function Name**         | ft_isprint                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -203,7 +203,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The isprint() function returns non-zero if c is a printable character; otherwise returns 0.|
 | **Description**           |The isprint() functions is used to check for any printable character including space.|
 
-   - [**Toupper**]()
+   - [**Toupper**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_toupper.c)
 
 | **Function Name**         | ft_toupper                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -212,7 +212,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The toupper() function returns the converted letter, or c if the conversion was not possible.|
 | **Description**           |If c is a lowercase letter, toupper() returns its uppercase equivalent, if an uppercase representation exists in the current locale.|
 
-   - [**Tolower**]()
+   - [**Tolower**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_tolower.c)
 
 | **Function Name**         | ft_tolower                                                                                                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -221,7 +221,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |The tolower() function returns the converted letter, or c if the conversion was not possible.|
 | **Description**           |If c is a uppercase letter, tolower() returns its lowercase equivalent, if an lowercase representation exists in the current locale.|
 
-   - [**Calloc**]()
+   - [**Calloc**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_calloc.c)
 
 | **Function Name**         | ft_calloc                                                                                                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -230,7 +230,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          |  Upon successful completion with both count and size non-zero, calloc() shall return a pointer to the allocated space. If either count or size is 0, then either:* A null pointer shall be returned and errno may be set to an implementation-defined value, or * A pointer to the allocated space shall be returned. The application shall ensure that the pointer is not used to access an object. Otherwise, it shall return a null pointer and set errno to indicate the error.|
 | **Description**           | The calloc() function shall allocate unused space for an array of count elements each of whose size in bytes is size. The space shall be initialized to all bits 0.|
 
-   - [**Strdup**]()
+   - [**Strdup**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strdup.c)
 
 | **Function Name**         | ft_strdup                                                                                                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -441,8 +441,8 @@ typedef struct    s_list
 <a id="Res"></a>
 ## Resources
 
-- Lists:
-- Libft tutorial:
+- Lists: 
+- Libft tutorial: 
 - ...
 
 Thanks for watching my libft project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
