@@ -39,3 +39,11 @@ int	ft_atoi(const char *str)
 	}
 	return (neg * j);
 }
+
+/*
+int main ()
+{
+	ft_atoi("---+12368abc");    Returns: the str converted to integer (-12368).
+	return (0);
+}
+*/
