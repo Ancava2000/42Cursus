@@ -29,8 +29,8 @@ void	*ft_memset(void *b, int c, size_t len)
 int main()
 {
 	char buffer[10];
-	ft_memset(buffer, 'A', sizeof(buffer));  Devuelve: AAAAAAAAAA
+	ft_memset(buffer, 'A', sizeof(buffer));  Returns: AAAAAAAAAA
  	char *str = "This is string.h library function"
-  	ft_memset(str, '$', 7);  Devuelve: $$$$$$$ string.h library function
+  	ft_memset(str, '$', 7);  Returns: $$$$$$$ string.h library function
 }
 */
