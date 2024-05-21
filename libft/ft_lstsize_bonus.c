@@ -24,3 +24,13 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (counter);
 }
+
+/*
+int main ()
+{
+	t_list *lst = ft_lstnew("Hello");
+	ft_lstadd_back(&lst, ft_lstnew("World"));  You create a new element (World), adding it in the end of the existing list (lst).
+	ft_lstsize(lst);   Returns: 2, as it is the number of elements in lst.
+	return (0);
+}
+*/
