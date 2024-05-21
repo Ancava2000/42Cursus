@@ -30,3 +30,15 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
+/*
+int main ()
+{
+   const char src[50] = "aaaaaaaaaaaaa";
+   char dest[50] = "hello!"
+   memcpy(dest, src, strlen(src)+1);
+   printf("memcpy = %s\n", dest);   Returns: The content of src copied to dest 
+   
+   return(0);
+}
+*/
