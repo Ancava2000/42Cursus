@@ -32,7 +32,7 @@ memset, bzero, memcpy, memccpy, memmove, memchr, memcmp, strlen,
 strlcpy, strlcat, strchr, strrchr, strnstr, strncmp, atoi, isalpha,
 isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 ```
-   - [**Memset**]()
+   - [**Memset**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_memset.c)
 
 | **Function Name**         | ft_memset                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | The memset() function returns a pointer to the memory area s.   |
 | **Description**           | The memset() function fills the first n bytes of the memory area pointed to by s with the constant byte c. |
 
-   - [**Bzero**]()
+   - [**Bzero**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_bzero.c)
 
 | **Function Name**         | ft_bzero                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,34 +50,25 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | None.  |
 | **Description**           | The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area. |
      
-   - [**Memcpy**]()
+   - [**Memcpy**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_memcpy.c)
 
 | **Function Name**         | ft_memcpy                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Prototype**             | ```void *memcpy(void *s1, const void * s2, size_t n);```                   |
-| **Parameters**            | ```*s1:``` New buffer. <br /> ```s2:``` Buffer to copy from. <br /> ```n:``` Number of characters to copy.   |
+| **Parameters**            | ```*s1:``` New buffer. <br /> ```*s2:``` Buffer to copy from. <br /> ```n:``` Number of characters to copy.   |
 | **Return Value**          | The memcpy() function returns a pointer to dest.  |
 | **Description**           |  The memcpy() function copies n bytes from memory area src to memory area dest.  The memory areas must not overlap.  Use memmove(3) if the memory areas do overlap. |
 
-   - [**Memccpy**]()
-
-| **Function Name**         | ft_memccpy                                                                                                                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**             | ```void *memccpy (void *src, const void *dest, int c, size_t n); ```                    |
-| **Parameters**            | ```*dest:``` Pointer to destination. <br /> ```src:``` Pointer to source object. <br /> ```c:``` The value to be copied. <br /> ```n:``` Number of characters to copy.   |
-| **Return Value**          | The memccpy() function returns a pointer to the next character in dest after c, or NULL if c was not found in the first n characters of src.  |
-| **Description**           |  The memccpy() function copies no more than n bytes from memory area src to memory area dest, stopping when the character c is found. If the memory areas overlap, the results are undefined. |
-
-   - [**Memmove**]()
+   - [**Memmove**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_memmove.c)
 
 | **Function Name**         | ft_memmove                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**             | ```void *memccpy(void dest, const void src, int c, size_t n);```        |
-| **Parameters**            | ```*dest:``` Pointer to destination. <br /> ```src:``` Pointer to source object. <br /> ```n:``` Number of characters to copy.   |
+| **Prototype**             | ```void *memmove(void *dest, const void *src, size_t n);```        |
+| **Parameters**            | ```*dest:``` Pointer to destination where the content is to be copied. <br /> ```src:``` Pointer to source object to be copied. <br /> ```n:``` Number of characters to copy.   |
 | **Return Value**          | The memmove() function shall return dest. No return value is reserved to indicate an error. |
 | **Description**           |  The memmove() function copies n bytes from memory area src to memory area dest. The memory areas may overlap: copying takes place as though the bytes in src are first copied into temporary array that does not overlap src or dest, and the bytes are then copied from the temporary array to dest.|
 
-   - [**Memchr**]()
+   - [**Memchr**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_memchr.c)
 
 | **Function Name**         | ft_memchr                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -86,16 +77,16 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | The memchr() and memrchr() functions return a pointer to the matching byte or NULL if the character does not occur in the given memory area.|
 | **Description**           | The memchr() function scans the initial n bytes of the memory area pointed to by s for the first instance of c. Both c and the bytes of the memory area pointed to by s are interpreted as unsigned char.|
 
-   - [**Memcmp**]
+   - [**Memcmp**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_memcmp.c)
 
 | **Function Name**         | ft_memcmp                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**             | ```int memcmp(const void s1, const void s2, size_t n);```        |
-| **Parameters**            | ```*s1:``` First string. <br /> ```s2:``` Second string. <br /> ```n:``` Number of characters to compare.   |
+| **Prototype**             | ```int memcmp(const void *s1, const void *s2, size_t n);```        |
+| **Parameters**            | ```*s1:``` First string. <br /> ```*s2:``` Second string. <br /> ```n:``` Number of characters to compare.   |
 | **Return Value**          | The memcmp() function returns an integer less than, equal to, or greater than zero if the first n bytes of s1 is found, respectively, to be less than, to match, or be greater than the first n bytes of s2. For a nonzero return value, the sign is determined by the sign of the difference between the first pair of bytes (interpreted as unsigned char) that differ in s1 and s2. If n is zero, the return value is zero.|
 | **Description**           | The memcmp() function compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2.|
 
-   - [**Strlen**]()
+   - [**Strlen**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strlen.c)
 
 | **Function Name**         | ft_strlen                                                                                                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -104,21 +95,21 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Return Value**          | The strlen() function returns the number of bytes in the string pointed to by s.|
 | **Description**           | The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').|
 
-   - [**Strlcpy**]
+   - [**Strlcpy**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strlcpy.c)
 
 | **Function Name**         | ft_strlcpy                                                                                                                                                                   |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Prototype**             | ```size_t strlcpy(char *dst, const char *src, size_t n);```     |
-| **Parameters**            | ```*dst:``` Pointer to the string to which the src is to be appended. <br /> ```src:``` Pointer to source. <br /> ```n:``` Total number of characters to copy. |
+| **Parameters**            | ```*dst:``` Pointer to the string to which the src is to be appended. <br /> ```*src:``` Pointer to source. <br /> ```n:``` Total number of characters to copy. |
 | **Return Value**          | The strlcpy() function returns the total length of the string that would have been copied if there was unlimited space. This might or might not be equal to the length of the create string actually, depending on whether there was enough space. This means that you can call strlcpy() once to find out how much space is required, then allocate it if you do not have enough, and finally call strlcpy() a second time to do the required copy.|
 | **Description**           | Declared in string.h, the strlcpy() function copies up to size-1 characters from the NUlL-terminated string src to dst.|
 
-   - [**Strlcat**]()
+   - [**Strlcat**](https://github.com/Ancava2000/42Cursus/blob/main/libft/ft_strlcat.c)
 
 | **Function Name**         | ft_strlcat                                                                                                                                                                   |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Prototype**             | ```char strlcat(char dst, const char * src, size_t n);```     |
-| **Parameters**            | ```*dst:``` Pointer to the string to which the src is to be appended. <br /> ```src:``` Pointer to source. <br /> ```n:```  Refers to the entire buffer where the string or character sequence is contained. |
+| **Prototype**             | ```char strlcat(char *dst, const char *src, size_t n);```     |
+| **Parameters**            | ```*dst:``` Pointer to the string to which the src is to be appended. <br /> ```*src:``` Pointer to source. <br /> ```n:```  Refers to the entire buffer where the string or character sequence is contained. |
 | **Return Value**          | The strlcpy() function returns the length of the total string they tried to create.|
 | **Description**           |These functions copy and catenate the input string into a destination string. If the destination buffer, limited by its size, isn't large enough to hold the copy, the resulting string is truncated (but it is guaranteed to be null-terminated).  |
 
@@ -127,7 +118,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Function Name**         | ft_strchr                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Prototype**             | ```char strchr(const char *s,int c);```     |
-| **Parameters**            | ```*s:``` Null-terminated source string <br /> ```n:``` Character to be located. |
+| **Parameters**            | ```*s:``` Null-terminated source string <br /> ```c:``` Character to be located. |
 | **Return Value**          |The strchr() and strrchr() functions return a pointer to the matched character or NULL if the character is not found. The terminating null byte is considered part of the string, so that if c is specified as '\0', these functions return a pointer to the terminator.|
 | **Description**           | The strchr() function returns a pointer to the first occurrence of the character c in the string s.|
 
@@ -136,7 +127,7 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Function Name**         | ft_strrchr                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Prototype**             | ```char strrchr(const char *s,int c);```     |
-| **Parameters**            | ```*s:``` Null-terminated source string <br /> ```n:``` Character to be located. |
+| **Parameters**            | ```*s:``` Null-terminated source string <br /> ```c:``` Character to be located. |
 | **Return Value**          |The strchr() and strrchr() functions return a pointer to the matched character or NULL if the character is not found. The terminating null byte is considered part of the string, so that if c is specified as '\0', these functions return a pointer to the terminator.|
 | **Description**           | The strchr() function returns a pointer to the last occurrence of the character c in the string s.|
 
@@ -159,6 +150,14 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Description**           |The strncmp() function shall compare not more than n bytes (bytes that follow a NUL character are not compared) from the array pointed to by s1 to the array pointed to by s2.|
 
    - [**Atoi**]()
+
+| **Function Name**         | ft_atoi                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int atoi(const char *str);```     |
+| **Parameters**            | ```*str:``` This is the string representation of an integral number.|
+| **Return Value**          | The converted value or 0 on error.|
+| **Description**           | The atoi() function converts the initial portion of the string pointed to by str to int.|
+
    - [**Isalpha**]()
 
 | **Function Name**         | ft_isalpha                                                                                                                                                                  |
@@ -169,7 +168,6 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Description**           |The isalpha() function is used to check whether a character is an alphabet or not. The function is defined in the ctype.h header file.|
 
    - [**Isdigit**]()
-
 
 | **Function Name**         | ft_isdigit                                                                                                                                                                  |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -206,9 +204,40 @@ isdigit, isalnum, isascii, isprint, toupper, tolower, calloc, strdup
 | **Description**           |The isprint() functions is used to check for any printable character including space.|
 
    - [**Toupper**]()
+
+| **Function Name**         | ft_toupper                                                                                                                                                                  |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int toupper(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The toupper() function returns the converted letter, or c if the conversion was not possible.|
+| **Description**           |If c is a lowercase letter, toupper() returns its uppercase equivalent, if an uppercase representation exists in the current locale.|
+
    - [**Tolower**]()
+
+| **Function Name**         | ft_tolower                                                                                                                                                                 |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` int tolower(int c);```     |
+| **Parameters**            | ```c:``` Character to be checked.|
+| **Return Value**          |The tolower() function returns the converted letter, or c if the conversion was not possible.|
+| **Description**           |If c is a uppercase letter, tolower() returns its lowercase equivalent, if an lowercase representation exists in the current locale.|
+
    - [**Calloc**]()
+
+| **Function Name**         | ft_calloc                                                                                                                                                                 |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` void	*calloc(size_t count, size_t size);```     |
+| **Parameters**            | ```count:``` This is the number of elements to be allocated. <br /> ```size:``` This is the size of elements.|
+| **Return Value**          |  Upon successful completion with both count and size non-zero, calloc() shall return a pointer to the allocated space. If either count or size is 0, then either:* A null pointer shall be returned and errno may be set to an implementation-defined value, or * A pointer to the allocated space shall be returned. The application shall ensure that the pointer is not used to access an object. Otherwise, it shall return a null pointer and set errno to indicate the error.|
+| **Description**           | The calloc() function shall allocate unused space for an array of count elements each of whose size in bytes is size. The space shall be initialized to all bits 0.|
+
    - [**Strdup**]()
+
+| **Function Name**         | ft_strdup                                                                                                                                                                 |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Prototype**             | ``` char	*strdup(const char *s1);```     |
+| **Parameters**            | ```*s1:``` String to be duplicated.|
+| **Return Value**          |  On success, the strdup() function returns a pointer to the duplicated string.  It returns NULL if insufficient memory was available, with errno set to indicate the error.|
+| **Description**           | The strdup() function returns a pointer to a new string which is a duplicate of the string s.  Memory for the new string is obtained with malloc(3), and can be freed with free(3).|
 
 <a id="Add_func"></a>
 ### Additional functions
@@ -412,7 +441,7 @@ typedef struct    s_list
 <a id="Res"></a>
 ## Resources
 
-- Structs:
+- Lists:
 - Libft tutorial:
 - ...
 
