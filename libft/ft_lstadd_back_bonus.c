@@ -26,3 +26,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	last -> next = new;
 }
+
+/*
+int main ()
+{
+	t_list *lst = ft_lstnew("Hello");
+	t_list *new = ft_lstnew("World");
+	ft_lstadd_back(&lst, new);  Returns: The element World is added at the end of the exiting list.
+	return (0);
+}
+*/
