@@ -20,3 +20,13 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 	}
 }
+
+/*
+int main ()
+{
+	t_list *lst = ft_lstnew("Hello");
+	t_list *new = ft_lstnew("World");
+	ft_lstadd_front(&lst, new);   Returns: The element new is added at the beginning of the existing list.
+ 	return (0);
+}
+*/
