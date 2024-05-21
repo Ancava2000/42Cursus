@@ -76,3 +76,11 @@ char	*ft_itoa(int n)
 		*(str) = 45;
 	return (str);
 }
+
+/*
+int main ()
+{
+	ft_itoa(12345);  Returns the integer coverted into a string.
+	return (0);
+}
+*/
