@@ -28,3 +28,11 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	ft_strlcpy(new, s + start, len + 1);
 	return (new);
 }
+
+/*
+int main ()
+{
+	char str[] = "Hello, World!";
+	ft_substr(str, 7, 5);    Returns: The function creates a substring "World" starting from index 7 of the source string and with a length of 5.
+}
+*/
