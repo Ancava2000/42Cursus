@@ -23,3 +23,11 @@ t_list	*ft_lstnew(void *content)
 	node -> next = NULL;
 	return (node);
 }
+
+/*
+int main ()
+{
+	t_list *new_element = ft_lstnew("Hello World!");   Returns: It creates a new node in the list (new_element) with the content "Hello World!".
+	return (0);
+}
+*/
