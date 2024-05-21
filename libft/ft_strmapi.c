@@ -31,3 +31,19 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+
+/*
+char uppercase(char c, unsigned int i)
+{
+    	if (i % 2 == 0)
+        	return toupper(c);
+    	else
+        	return tolower(c);
+}
+
+int main ()
+{
+	ft_strmapi("Hello world", uppercase);   Returns: A new string resulting from the application of the function to the characters of the input string (HeLlO WoRlD). 
+ 	return (0);
+}
+*/
