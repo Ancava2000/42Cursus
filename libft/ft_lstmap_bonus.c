@@ -36,3 +36,34 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+
+/*
+void *uppercase(void *content)
+{
+	if (content == NULL) 
+	{
+		return (NULL);
+    	}
+    	size_t i = 0;
+    	char *str = (char *)content;
+    	char *result = ft_strdup(str); 
+    	while (content)
+    	{
+     		result[i] = ft_toupper(result[i]);
+		i++,    
+   	}
+    	return result;
+}
+
+void free_content(void *content)
+{
+	free(content);
+}
+int main ()
+{
+	t_list *lst = ft_lstnew("hello");
+	ft_lstadd_back(&lst, ft_lstnew("world"));
+	t_list *new_lst = ft_lstmap(lst, uppercase, free_content);   Returns: A new list with the each content transform by the functions indicated ("HELLO" "WORLD").
+ 	return (0);
+}
+*/
