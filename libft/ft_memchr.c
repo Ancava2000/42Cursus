@@ -32,3 +32,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
+/*
+int main ()
+{
+	const char *str = "Hello, world";
+	const char ch = ",";
+	const char *ret = ft_memchr(str, c, strlen(str));
+	printf("String after |%c| is - |%s|\n", ch, ret);   Returns: A string beginning in the ch indicated if it is found. (String after |,| is - |, world|).
+   	return(0);
+}
+*/
