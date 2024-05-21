@@ -30,3 +30,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (srcsize);
 }
+/*
+int main ()
+{
+	char src[] = "Hello";
+	char dest[6];
+	ft_strlcpy(dest, src, sizeof(dest));   Returns: Hello copied int dest string with NULL termiantion.
+
+	char src[] = "This is a very long string";
+	char dest[10];
+	ft_strlcpy(dest, src, sizeof(dest));   Returns: "This is a", with NULL termination.
+}
+*/
