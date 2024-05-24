@@ -47,7 +47,7 @@ ft_lstsize_bonus.c \
 OBJS			= $(SRC:.c=.o)
 BOBJS			= $(BSRC:.c=.o)
 
-CC				= gcc
+CC				= clang
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
