@@ -455,7 +455,7 @@ make
 ```
 To compile with the main and make tests (to compile into an executable, it's very important that you write before the main.c than the library):
 ```
-clang main.c yourexecutablename.a -o name
+clang main.c yourlibraryname.a (-o name)
 ```
 To remove all the temporary generated files (.o):
 ```
