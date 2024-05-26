@@ -12,8 +12,8 @@
 
 3. [Makefile](#Makefile)
 
-   - [Commands]()
-   - [Compile]()
+   - [Commands](Commands)
+   - [Compile](Compile)
 4. [Resources](#Res)
 ***
 <a id="About"></a>
