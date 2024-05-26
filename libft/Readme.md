@@ -12,8 +12,8 @@
 
 3. [Makefile](#Makefile)
 
-   - [Commands](Commands)
-   - [Compile](Compile)
+   - [Commands](#Comm)
+  
 4. [Resources](#Res)
 ***
 <a id="About"></a>
@@ -446,7 +446,7 @@ A *Makefile* is a tool that sets a set of rules, like a script does, that helps 
    - Implement the rules ```clean``` (remove all the temporary generated files), ```fclean``` (make clean plus `clean the executable), ```re``` (make fclean followed by make all), ```all``` (what the central or default task of a Makefile is customarily called) and ```PHONY``` (you can explicitly declare targets, like clean or all, to be phony by making it a prerequisite. This is to avoid compiling errors in the case that a file in the same directory is named the same as a target).
    - Avoid ```relink``` (when we type multiple timess the command make there won't be a new recompilation).
 
-<a id="Commands"></a>
+<a id="Comm"></a>
 ### Commands
 
 To compile the files into an executable:
