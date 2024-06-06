@@ -29,4 +29,4 @@ https://profile.intra.42.fr/
 | 0️⃣ | [Libft](https://github.com/Ancava2000/42Cursus/tree/main/libft)| C | Your own library in C | ```Library``` <br /> ```Makefile``` <br /> ```Lists``` | 01/05/2024 |
 | 1️⃣ | [ft_printf](https://github.com/Ancava2000/42Cursus/tree/main/printf)| C | Recoding the printf function |```Variadic Functions``` <br /> ```Makefile``` <br /> ```Pointers``` | 09/05/2024 |
 | 1️⃣ | Born2beroot | Virtual Machine | Build a Virtual Machine with Debian. I suggest the tutorial made by [gemartin99](https://github.com/gemartin99/Born2beroot-Tutorial)|```Network``` <br /> ```Server``` <br /> ```SSH```<br /> ```VirtualBox``` | 16/05/2024 |
-| 1️⃣ | Get Next Line | C | Write a function which returns a line read from a file descriptor |```fd``` <br /> ```fd functions``` <br /> ```Static variables```<br /> ```Macros``` |  |
+| 1️⃣ | [Get Next Line](https://github.com/Ancava2000/42Cursus/tree/main/Get%20next%20line) | C | Write a function which returns a line read from a file descriptor |```fd``` <br /> ```fd functions``` <br /> ```Static variables```<br /> ```Macros``` |  |
