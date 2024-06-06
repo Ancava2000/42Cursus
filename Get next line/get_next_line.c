@@ -13,7 +13,7 @@
 #include "get_next_line.h"
 
 //Function to join the contents of buffer and temp into the new variable joined
-//Then, I free the previous buffer to return the new joined with all the content
+//Then, it frees the previous buffer to return the new joined with all the content
 char	*ft_free(char *buffer, char *temp)
 {
 	char	*joined;
@@ -23,7 +23,10 @@ char	*ft_free(char *buffer, char *temp)
 	return (joined);
 }
 
-//
+/*After the line is copied, there's still an unwanted string before the '\n'
+in the buffer. The first loop moves forward in the buffer until the '\n',
+then it starts to copy the string after the '\n' (+1) into a temporal variable.
+The buffer is freed and the temp with the rest of the string is returned*/
 char	*buffer_rest(char *buffer)
 {
 	char	*temp;
@@ -47,8 +50,8 @@ char	*buffer_rest(char *buffer)
 	return (temp);
 }
 
-/*This function copy the content before the '\n' into the line variable,
-this is the content printed in the first function. if buffer == '\n' 
+/*This function copies the string before the '\n' into the variable line,
+this is the string printed in the first function. If buffer == '\n' 
 it adds two (because of the '\n' and the null character)*/
 static char	*buffer_copy(char *buffer)
 {
@@ -76,10 +79,10 @@ static char	*buffer_copy(char *buffer)
 	return (line);
 }
 
-/*When the read_file function starts, there is no buffer,
-so you have to allocate a basic memory for it. Then, allocate enough memory
+/*When the read_file function starts, there is no buffer, so it's necessary to
+allocate a basic memory for it. Then, it allocates enough memory
 in a temp function to stored the content of the buffer_size.
-In a loop the fd is read, and in the case of any error you free everything.
+In a loop the fd is read and, in the case of any error, it frees everything.
 If the '\n' is found in the temp, the loop is broken.*/
 static char	*read_file(char *buffer, int fd)
 {
@@ -140,7 +143,7 @@ int	main(void)
 	int		i;
 
 	i = 1;
-	fd = open("ana.txt", O_RDONLY);
+	fd = open("aaa.txt", O_RDONLY);
 	while (i > 0)
 	{
 		line = get_next_line(fd);
