@@ -122,20 +122,26 @@ char	*get_next_line(int fd)
 
 int	main(void)
 {
-	int		fd;
-	char	*line;
-	int		i;
-
+	int	fd1;
+	int	fd2;
+	char	*line1;
+	char	*line2;
+ 	int	i;
+	
 	i = 1;
-	fd = open("ana.txt", O_RDONLY);
+	fd1 = open("aaa.txt", O_RDONLY);
+ 	fd2 = open("bbb.txt", O_RDONLY);
 	while (i > 0)
 	{
-		line = get_next_line(fd);
-		if (line == NULL)
+		line1 = get_next_line(fd1);
+  		line2 = get_next_line(fd2);
+		if (line1 == NULL || line2 == NULL)
 			break ;
-		printf("%s", line);
-		free (line);
+		printf("%s\n%s\n", line1, line2);
+		free (line1);
+  		free (line2);
 	}
-	close(fd);
+	close(fd1);
+ 	close(fd2);
 	return (0);
 }*/
