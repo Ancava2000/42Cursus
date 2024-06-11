@@ -6,12 +6,14 @@
 /*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 11:07:49 by acarro-v          #+#    #+#             */
-/*   Updated: 2024/06/06 14:29:14 by acarro-v         ###   ########.fr       */
+/*   Updated: 2024/06/07 11:44:30 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
+//Function to join the contents of buffer and temp into the new variable joined
+//Then, I free the previous buffer to return the new joined with all the content
 char	*ft_free(char *buffer, char *temp)
 {
 	char	*joined;
@@ -21,6 +23,10 @@ char	*ft_free(char *buffer, char *temp)
 	return (joined);
 }
 
+/*After the line is copied, there's still an unwanted string before the '\n'
+in the buffer. The first loop moves forward in the buffer until the '\n',
+then it starts to copy the string after the '\n' (+1) into a temporal variable.
+The buffer is freed and the temp with the rest of the string is returned*/
 char	*buffer_rest(char *buffer)
 {
 	char	*temp;
@@ -28,7 +34,6 @@ char	*buffer_rest(char *buffer)
 	int		j;
 
 	i = 0;
-	j = 0;
 	while (buffer[i] != '\n' && buffer[i] != '\0')
 		i++;
 	if (buffer[i] == '\0')
@@ -38,13 +43,17 @@ char	*buffer_rest(char *buffer)
 	}
 	temp = ft_calloc(ft_strlen(buffer) - i + 1, sizeof(char));
 	i++;
+	j = 0;
 	while (buffer[i] != '\0')
 		temp[j++] = buffer[i++];
 	free(buffer);
 	return (temp);
 }
 
-char	*buffer_copy(char *buffer)
+/*This function copy the content before the '\n' into the line variable,
+this is the content printed in the first function. if buffer == '\n' 
+it adds two (because of the '\n' and the null character)*/
+static char	*buffer_copy(char *buffer)
 {
 	char	*line;
 	int		i;
@@ -55,22 +64,24 @@ char	*buffer_copy(char *buffer)
 		return (0);
 	while (buffer[i] != '\n' && buffer[i] != '\0')
 		i++;
-	if (buffer[i] == '\n')
-		line = ft_calloc((i + 2), sizeof(char));
-	else
-		line = ft_calloc((i + 1), sizeof(char));
+	line = ft_calloc((i + 2), sizeof(char));
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
 		line[i] = buffer[i];
 		i++;
 	}
-	if (buffer[i] == '\n')
+	if (buffer[i] == '\n' && buffer[i])
 		line[i] = '\n';
 	return (line);
 }
 
-char	*read_file(char *buffer, int fd)
+/*When the read_file function starts, there is no buffer,
+so you have to allocate a basic memory for it. Then, allocate enough memory
+in a temp function to stored the content of the buffer_size.
+In a loop the fd is read, and in the case of any error you free everything.
+If the '\n' is found in the temp, the loop is broken.*/
+static char	*read_file(char *buffer, int fd)
 {
 	char	*temp;
 	int		i;
@@ -85,7 +96,6 @@ char	*read_file(char *buffer, int fd)
 		if (i == -1)
 		{
 			free(temp);
-			free(buffer);
 			return (0);
 		}
 		temp[i] = '\0';
@@ -104,8 +114,6 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
-		free(buffer[fd]);
-		buffer[fd] = NULL;
 		return (NULL);
 	}
 	buffer[fd] = read_file(buffer[fd], fd);
@@ -122,26 +130,21 @@ char	*get_next_line(int fd)
 
 int	main(void)
 {
-	int	fd1;
-	int	fd2;
-	char	*line1;
-	char	*line2;
- 	int	i;
-	
+	int		fd;
+	char	*line;
+	int		i;
+
 	i = 1;
-	fd1 = open("aaa.txt", O_RDONLY);
- 	fd2 = open("bbb.txt", O_RDONLY);
+	fd = open("ana.txt", O_RDONLY);
 	while (i > 0)
 	{
-		line1 = get_next_line(fd1);
-  		line2 = get_next_line(fd2);
-		if (line1 == NULL || line2 == NULL)
+		line = get_next_line(fd);
+		if (line == NULL)
 			break ;
-		printf("%s\n%s\n", line1, line2);
-		free (line1);
-  		free (line2);
+		printf("%s", line);
+		free (line);
 	}
-	close(fd1);
- 	close(fd2);
+	close(fd);
 	return (0);
-}*/
+}
+*/
