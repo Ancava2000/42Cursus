@@ -147,7 +147,8 @@ int	main(void)
 		free (line1);
   		free (line2);
 	}
-	close(fd);
+	close(fd1);
+ 	close(fd2);
 	return (0);
 }
 */
