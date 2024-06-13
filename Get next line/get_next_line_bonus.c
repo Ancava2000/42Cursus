@@ -128,27 +128,23 @@ char	*get_next_line(int fd)
 
 int	main(void)
 {
-	int		fd1;
- 	int		fd2;
-	char		*line1;
- 	char		*line2;
-	int		i;
+	char	*line;
+	int	fd1 = open("ana.txt", O_RDONLY);
+	int	fd2 = open("bbb.txt", O_RDONLY);
 
-	i = 1;
-	fd1 = open("ana.txt", O_RDONLY);
- 	fd2 = open("bbb.txt", O_RDONLY);
-	while (i > 0)
+	while ((line = get_next_line(fd1)) != NULL)
 	{
-		line1 = get_next_line(fd1);
-  		line2 = get_next_line(fd2);
-		if (line1 == NULL || line2 == NULL)
-			break ;
-		printf("%s%s", line1 line2);
-		free (line1);
-  		free (line2);
+		printf("%s", line);
+		free(line);
+	}
+	printf("\n");
+	while ((line = get_next_line(fd2)) != NULL)
+	{
+		printf("%s", line);
+		free(line);
 	}
 	close(fd1);
- 	close(fd2);
+	close(fd2);
 	return (0);
 }
 */
