@@ -19,7 +19,7 @@ int ft_printf(char const *, ...);
 ```
 ```You are going to discover a very famous and versatile C function: printf(). This exercise is a great opportunity to improve your programming skills. It is a moderately difficult exercise. You will also discover variadic functions in C. The key to succeeding in ft_printf is having well-structured and extensible code.```
 <a id="Var"></a>
-## Variadic Functions
+## Variadic Functions 🧾
 The main complexity of this function lies in: **dealing with an indeterminate number and type of parameters** (pointed by the elipsis in the parameters of the prototype) and **returning an ```int``` type.**
 The first problem is a function named variadic function, which consists of at least one fixed variable and then an ellipsis(…) as the last parameter. To handle this we use the macros of the stdarg.h library:
 
@@ -56,7 +56,7 @@ int	ft_printf(char const *str, ...)
 ```
 
 <a id="Form"></a>
-## Formats
+## Formats 💫
 In your printf you must be able to use the following formats:
 
 | **Format**         | Description                          |
@@ -72,7 +72,7 @@ In your printf you must be able to use the following formats:
 | **%%**  | Prints the % symbol |
 
 <a id="Struct"></a>
-## Structure 
+## Structure 🗃️
 
 In the ```ft_printf()``` function the int count to be returned and the va_list macro are initialized. The ```ft_format()``` function is called when it encounters the % symbol and, depending on the next character, one function or another is called. To deal with the problem of returning an int, in the variable count is stored the result of any of these functions.
 
