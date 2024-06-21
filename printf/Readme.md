@@ -82,6 +82,16 @@ In the ```ft_printf()``` function the int count to be returned and the va_list m
 - [```ft_putdigit_pf()```](https://github.com/Ancava2000/42Cursus/blob/main/printf/ft_putdigit_pf.c) recursively prints a number (unsigned, integer or hexadecimal). To print an hexadecimal, it uses a string called symbols, with all the necessary numbers and letters for the uppercase and lowercase cases.
 - [```ft_printptr_pf()```](https://github.com/Ancava2000/42Cursus/blob/main/printf/ft_printptr_pf.c) prints a pointer in hexadecimal format. The ```ft_putstr()``` function is called to print the prefix "0x".
 
+Example of main:
+```c
+int main (void)
+{
+	ft_printf("%c, %s, %p, %d, %i, %u, %x\n", 'a', "hello", 42, 42, -100, 4242, -1);
+	printf("%c, %s, %p, %d, %i, %u, %x\n", 'a', "hello", 42, 42, -100, 4242, -1);
+	return (0);
+}
+```
+
 <a id="Make"></a>
 ## Makefile ♻️
 
