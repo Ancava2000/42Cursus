@@ -75,11 +75,12 @@ In your printf you must be able to use the following formats:
 ## Structure 
 
 In the ```ft_printf()``` function the int count to be returned and the va_list macro are initialized. The ```ft_format()``` function is called when it encounters the % symbol and, depending on the next character, one function or another is called. To deal with the problem of returning an int, in the variable count is stored the result of any of these functions.
-Printf used a function for each of the formats to be printed:
-- ```ft_putchar_pf()```
-- ```ft_putstr_pf()```
-- ```ft_putdigit_pf()```
-- ```ft_printptr_pf()```
+
+```ft_format()``` calls a function for each of the formats to be printed:
+- [```ft_putchar_pf()```](https://github.com/Ancava2000/42Cursus/blob/main/printf/ft_putchar_pf.c) prints ```char``` variables.
+- [```ft_putstr_pf()```](https://github.com/Ancava2000/42Cursus/blob/main/printf/ft_putstr_pf.c) prints a ```char *```variable iterating the ```ft_putchar``` function. The count variable to return is incremented in each loop.  
+- [```ft_putdigit_pf()```](https://github.com/Ancava2000/42Cursus/blob/main/printf/ft_putdigit_pf.c) recursively prints a number (unsigned, integer or hexadecimal). To print an hexadecimal, it uses a string called symbols, with all the necessary numbers and letters for the uppercase and lowercase cases.
+- [```ft_printptr_pf()```](https://github.com/Ancava2000/42Cursus/blob/main/printf/ft_printptr_pf.c) prints a pointer in hexadecimal format. The ```ft_putstr()``` function is called to print the prefix "0x".
 
 <a id="Make"></a>
 ## Makefile ♻️
@@ -88,7 +89,7 @@ A *Makefile* is a tool that sets a set of rules, like a script does, that helps 
    - Compile into a specific named ```library.```
    - Get its ```source files``` from an indicated directory and with their last modifide dates.
    - Compile the ```.c files``` with ```clang``` and with ```-Wall -Wextra -Werror flags``` in that order.
-   - Implement the rules ```clean``` (remove all the temporary generated files), ```fclean``` (make clean plus `clean the executable), ```re``` (make fclean followed by make all), ```all``` (what the central or default task of a Makefile is customarily called) and ```Phony``` (you can explicitly declare targets, like clean or all, to be phony by making it a prerequisite. This is to avoid compiling errors in the case that a file in the same directory is named the same as a target).
+   - Implement the rules ```clean``` (remove all the temporary generated files), ```fclean``` (make clean plus `clean the executable), ``re`` (make fclean followed by make all), ``all`` (what the central or default task of a Makefile is customarily called) and ``Phony`` (you can explicitly declare targets, like clean or all, to be phony by making it a prerequisite. This is to avoid compiling errors in the case that a file in the same directory is named the same as a target).
    - Avoid ```relink``` (when we type multiple timess the command make there won't be a new recompilation).
 
 <a id="Comm"></a>
