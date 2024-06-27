@@ -121,3 +121,13 @@ To remove everything plus the executable:
 ```
 make fclean
 ```
+<a id="Res"></a>
+## Resources 📹
+
+- **Variadic functions:** Oceano's video about [variadic functions](https://www.youtube.com/watch?v=7Sph8JlRo0g&ab_channel=Oceano)
+- **Understanding Printf:** [Oceano again](https://www.youtube.com/watch?v=byRw36Y3Hjs&ab_channel=Oceano) and [nikito](https://www.youtube.com/watch?v=Hb2m7htiKWM&ab_channel=nikito).
+- **Makefile:** [Tutorial by gleal42](https://github.com/gleal42/Makefile-Tutorial), [Cheatsheet](https://devhints.io/makefile)
+
+Thanks for watching my printf project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
+
+![Alt text](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3ExaGlocHE0eHhyYnJ3M2xvc2VzcTU1M2lwZXBmazVpaW4yMzQwaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/14aumMYgx9CvKw/giphy.gif)
