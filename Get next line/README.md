@@ -7,11 +7,9 @@
 2. [Functions](#Fun)
    - [Static Variables](#Stat)
    - [Macros](#Mac)
-4. [Structure](#Struct)
-5. [Makefile](#Make)
-   - [Commands](#Comm)
-   - [Usage](#Us)
-6. [Resources](#Res)
+3. [Structure](#Struct)
+4. [Usage](#Us)
+5. [Resources](#Res)
 ***
 <a id="About"></a>
 ## About 🚀
@@ -41,19 +39,39 @@ char *get_next_line(int fd);
 
 In this project we find a new function called read(). ```The read() function is a low-level file manipulation function used to perform read operations on a file. It can be accessed by using the unistd.h library provided by C.``` The syntax of the read function is:
 ```c
-int read(int fileDescriptor, void *buffer, size_t bytesToRead) y el output.
+int read(int fileDescriptor, void *buffer, size_t bytesToRead)
 ```
+- ```fileDescriptor:``` The function needs a file descriptor to read the lines. Previously, to be able to read the file,, we should have opened the file with the function open(). For example ```fd = open("aaa.txt", O_RDONLY);```
+- ```buffer*:``` A pointer to the buffer in which the read data will be stored.
+- ```*bytesToRead*:``` The numbers of bytes we want to read from the file in each loop.
+
+For example, in my get next line I used:
+```c
+i = read(fd, temp, BUFFER_SIZE);
+```
+I read a number of bytes in the fd according to the BUFFER_SIZE (established in get_next_line.h), storing all of them in a temp variable.
+Finally, in regard of the return value:
+- if the line is read and shown the behavior is correct ✅.
+- if the value is NULL there is nothing else to read, or an error occurred ❌. 
 <a id="Stat"></a>
 ### Static Variables
 <a id="Mac"></a>
+The static variable have the ability to preserve its previous value in its previous scope without initializing in each loop. The variable only initializes one time. This type of variable is used in the project to preserve the number of bytes read in each loop. Due to this, we don't continually store the same letters in each loop, but we continue the byte count from the previous position.
+
+<img width="590" height="420" src= "https://github.com/user-attachments/assets/ada82a40-06e3-43c6-a8e6-640a984475e5">
+
 ### Macros
 <a id="Struct"></a>
 ## Structure 🗃️
-<a id="Make"></a>
-## Makefile ♻️
-<a id="Comm"></a>
-### Commands
+
 <a id="Us"></a>
-### Usage
+## Usage
 <a id="Res"></a>
+Because you will have to read files in get_next_line(), add this option to your compiler call: -D BUFFER_SIZE=n. It will define the buffer size for read().
+You will compile your code as follows (a buffer size of 42 is used as an example): 
+```c
+clang -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c.
+./a.out
+```
+If your main indicates the name of the file, you have to create a file with that name. 
 ## Resources 📹
