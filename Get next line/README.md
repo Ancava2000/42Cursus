@@ -26,21 +26,23 @@ char *get_next_line(int fd);
 **External Functions**
 | **Function Name**         | Description                                                                                                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| read(); | To read nbyte bytes from the file associated with the open file descriptor. |
-| malloc(); | To allocate memory for the lines. |
-| free(); | To free the memory and in the case of an error. |
+| **read();** | To read nbyte bytes from the file associated with the open file descriptor. |
+| **malloc();** | To allocate memory for the lines. |
+| **free();** | To free the memory and in the case of an error. |
 
 **Auxiliary Functions**
 | **Function Name**         | Description                                                                                                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| void	ft_bzero(void *s, size_t n); | The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area. |
-| void	*ft_calloc(size_t count, size_t size); | The calloc() function shall allocate unused space for an array of count elements each of whose size in bytes is size. The space shall be initialized to all bits 0. |
-| size_t	ft_strlen(char *s); | The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0'). |
-| char	*ft_strchr(char *s, int c); | The strchr() function returns a pointer to the first occurrence of the character c in the string s. |
-| char	*ft_strjoin(char *s1, char *s2); | Allocates (with malloc(3)) and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’. |
+| **void	ft_bzero(void *s, size_t n);*** | The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area. |
+| **void	*ft_calloc(size_t count, size_t size);*** | The calloc() function shall allocate unused space for an array of count elements each of whose size in bytes is size. The space shall be initialized to all bits 0. |
+| **size_t	ft_strlen(char *s);*** | The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0'). |
+| **char	*ft_strchr(char *s, int c);**** | The strchr() function returns a pointer to the first occurrence of the character c in the string s. |
+| **char	*ft_strjoin(char *s1, char *s2);***** | Allocates (with malloc(3)) and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’. |
 
-
-Explicar a lo mejor la función read y el output.
+In this project we find a new function called read(). ```The read() function is a low-level file manipulation function used to perform read operations on a file. It can be accessed by using the unistd.h library provided by C.``` The syntax of the read function is:
+```c
+int read(int fileDescriptor, void *buffer, size_t bytesToRead) y el output.
+```
 <a id="Stat"></a>
 ### Static Variables
 <a id="Mac"></a>
