@@ -31,11 +31,11 @@ char *get_next_line(int fd);
 **Auxiliary Functions**
 | **Function Name**         | Description                                                                                                                                                                 |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **void	ft_bzero(void *s, size_t n);*** | The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area. |
-| **void	*ft_calloc(size_t count, size_t size);*** | The calloc() function shall allocate unused space for an array of count elements each of whose size in bytes is size. The space shall be initialized to all bits 0. |
-| **size_t	ft_strlen(char *s);*** | The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0'). |
-| **char	*ft_strchr(char *s, int c);**** | The strchr() function returns a pointer to the first occurrence of the character c in the string s. |
-| **char	*ft_strjoin(char *s1, char *s2);***** | Allocates (with malloc(3)) and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’. |
+| void	ft_bzero(void *s, size_t n); | The bzero() function erases the data in the n bytes of the memory starting at the location pointed to by s, by writing zeros (bytes containing '\0') to that area. |
+| void	*ft_calloc(size_t count, size_t size); | The calloc() function shall allocate unused space for an array of count elements each of whose size in bytes is size. The space shall be initialized to all bits 0. |
+| size_t	ft_strlen(char *s); | The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0'). |
+| char	*ft_strchr(char *s, int c); | The strchr() function returns a pointer to the first occurrence of the character c in the string s. |
+| char	*ft_strjoin(char *s1, char *s2); | Allocates (with malloc(3)) and returns a new string, which is the result of the concatenation of ’s1’ and ’s2’. |
 
 In this project we find a new function called read(). ```The read() function is a low-level file manipulation function used to perform read operations on a file. It can be accessed by using the unistd.h library provided by C.``` The syntax of the read function is:
 ```c
@@ -61,6 +61,15 @@ The static variable have the ability to preserve its previous value in its previ
 
 <a id="Mac"></a>
 ### Macros
+Macros in C are powerful tools that allow developers to define reusable code snippets. They are defined using preprocessor directives and primarily used for code substitution and generation. Macros provide a convenient way to write concise and efficient code, improving the readability and maintainability of C programs.
+
+Specifically, the preprocessor directive used in macros is the ```#define``` directive. It associates a name with a value or an expression, so whenever the compiler encounters a macro in a program, it will replace it with the macro value.
+In the case of get next line, I define a macro named BUFFER_SIZE with a value of 42 in the library.
+```c
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+```
 
 <a id="Struct"></a>
 ## Structure 🗃️
@@ -74,5 +83,33 @@ You will compile your code as follows (a buffer size of 42 is used as an example
 clang -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c.
 ./a.out
 ```
-If your main indicates the name of the file, you have to create a file with that name. 
+If your main indicates the name of the file to read, you have to create a file with that name. For example:
+```c
+#include <fcntl.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	int		fd;
+	char	*line;
+	int		i;
+
+	i = 1;
+	fd = open("aaa.txt", O_RDONLY);
+	while (i > 0)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		printf("%s", line);
+		free (line);
+	}
+	close(fd);
+	return (0);
+```
+In the case your main doesn't indicates the file name, when you execute the program you have to also write the name of the file:
+```c
+./a.out aaa.txt
+```
+
 ## Resources 📹
