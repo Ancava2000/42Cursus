@@ -55,12 +55,13 @@ Finally, in regard of the return value:
 - if the value is NULL there is nothing else to read, or an error occurred ❌. 
 <a id="Stat"></a>
 ### Static Variables
-<a id="Mac"></a>
 The static variable have the ability to preserve its previous value in its previous scope without initializing in each loop. The variable only initializes one time. This type of variable is used in the project to preserve the number of bytes read in each loop. Due to this, we don't continually store the same letters in each loop, but we continue the byte count from the previous position.
 
 <img width="590" height="420" src= "https://github.com/user-attachments/assets/ada82a40-06e3-43c6-a8e6-640a984475e5">
 
+<a id="Mac"></a>
 ### Macros
+
 <a id="Struct"></a>
 ## Structure 🗃️
 
