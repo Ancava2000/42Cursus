@@ -73,6 +73,14 @@ In the case of get next line, I define a macro named BUFFER_SIZE with a value of
 
 <a id="Struct"></a>
 ## Structure 🗃️
+Project Functions:
+| **Function Name**         | Description                                                                                                                                                                 |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **get_next_line** | Reads from ```fd``` and returns the ```line``` or ```NULL``` |
+| **read_file** | Allocates enough memory in a ```temp``` variable to stored the content of the ```BUFFER_SIZE```. In a loop the ```fd``` is read and stored in ```temp```. The content of ```temp``` is copied to the ```buffer``` variable. If the ```\n``` is found in the ```temp```, the loop is broken. Returns ```buffer``` (all the read string) and free ```temp```  |
+| **buffer_copy** | In a loop, the ```i``` variable stores the number of characters in the ```buffer``` until ```\0``` or ```\n```. With that count the function allocates enough memory in the ```line``` variable to stored the characters of the ```buffer``` until ```\0``` or ```\n```. The content of ```buffer``` is copied in the ```line``` variable until ```\n```. Returns ```line``` (the string before \n) |
+| **buffer_rest** | In a loop, the ```i``` variable stores the number of characters in the ```buffer``` until ```\0``` or ```\n```. With that count the function allocates enough memory in the ```temp``` variable, subtracting the count from the buffer length, to stored the characters of the ```buffer``` after ```\n```. The content of ```buffer``` is copied in the ```temp``` variable until ```\0```. Returns ```temp``` (the string after /n) |
+| **ft_free** | Joins the contents of ```temp``` and ```buffer``` into a new variable called ```joined```. Used in ```read_file``` to stored ```buffer``` with all the content |
 
 <a id="Us"></a>
 ## Usage
