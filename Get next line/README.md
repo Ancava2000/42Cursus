@@ -88,7 +88,6 @@ Project Functions:
 
 <a id="Us"></a>
 ## Usage
-<a id="Res"></a>
 Because you will have to read files in get_next_line(), add this option to your compiler call: -D BUFFER_SIZE=n. It will define the buffer size for read().
 You will compile your code as follows (a buffer size of 42 is used as an example): 
 ```c
@@ -124,6 +123,7 @@ In the case your main doesn't indicates the file name, when you execute the prog
 ./a.out aaa.txt
 ```
 
+<a id="Res"></a>
 ## Resources 📹
 - **Static variables:** [geeksforgeeks](https://www.geeksforgeeks.org/static-variables-in-c/) and [PrepBytes Blog](https://www.prepbytes.com/blog/c-programming/static-variable-in-c/)
 - **Macros:** [geeksforgeeks](https://www.geeksforgeeks.org/macros-and-its-types-in-c-cpp/)
