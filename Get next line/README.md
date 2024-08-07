@@ -82,6 +82,10 @@ Project Functions:
 | **buffer_rest** | In a loop, the ```i``` variable stores the number of characters in the ```buffer``` until ```\0``` or ```\n```. With that count the function allocates enough memory in the ```temp``` variable, subtracting the count from the buffer length, to stored the characters of the ```buffer``` after ```\n```. The content of ```buffer``` is copied in the ```temp``` variable until ```\0```. Returns ```temp``` (the string after /n) |
 | **ft_free** | Joins the contents of ```temp``` and ```buffer``` into a new variable called ```joined```. Used in ```read_file``` to stored ```buffer``` with all the content |
 
+<p align="left">
+	<img  width="740" height="500" src= "https://github.com/user-attachments/assets/6779f51c-4815-40f3-bbca-877d446775ee">
+</p>
+
 <a id="Us"></a>
 ## Usage
 <a id="Res"></a>
@@ -121,3 +125,10 @@ In the case your main doesn't indicates the file name, when you execute the prog
 ```
 
 ## Resources 📹
+- **Static variables:** [geeksforgeeks](https://www.geeksforgeeks.org/static-variables-in-c/) and [PrepBytes Blog](https://www.prepbytes.com/blog/c-programming/static-variable-in-c/)
+- **Macros:** [geeksforgeeks](https://www.geeksforgeeks.org/macros-and-its-types-in-c-cpp/)
+- **Understanding get next line:** The great Oceano's video [get_next_line explained : develop a function that reads a file line by line](https://www.youtube.com/watch?v=8E9siq7apUU) and nikito's video [comprendre get_next_line](https://www.youtube.com/watch?v=-Mt2FdJjVno)
+- **Testers:** [Tripouille](https://github.com/Tripouille/gnlTester)
+Thanks for watching my get next line project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
+
+![Alt text](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWU4dnNxcDNtNXd1dWh5enNqc2dwNjIzYzk2MGR5ZXduaWlybGp0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13GIgrGdslD9oQ/giphy.gif)
