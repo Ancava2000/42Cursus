@@ -128,7 +128,8 @@ In the case your main doesn't indicates the file name, when you execute the prog
 - **Static variables:** [geeksforgeeks](https://www.geeksforgeeks.org/static-variables-in-c/) and [PrepBytes Blog](https://www.prepbytes.com/blog/c-programming/static-variable-in-c/)
 - **Macros:** [geeksforgeeks](https://www.geeksforgeeks.org/macros-and-its-types-in-c-cpp/)
 - **Understanding get next line:** The great Oceano's video [get_next_line explained : develop a function that reads a file line by line](https://www.youtube.com/watch?v=8E9siq7apUU) and nikito's video [comprendre get_next_line](https://www.youtube.com/watch?v=-Mt2FdJjVno)
-- **Testers:** [Tripouille](https://github.com/Tripouille/gnlTester)
+- **Testers:** [Tripouille](https://github.com/Tripouille/gnlTester) 
+
 Thanks for watching my get next line project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
 
 ![Alt text](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWU4dnNxcDNtNXd1dWh5enNqc2dwNjIzYzk2MGR5ZXduaWlybGp0ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13GIgrGdslD9oQ/giphy.gif)
