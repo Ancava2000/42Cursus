@@ -70,7 +70,7 @@ t_stack	*ft_addnodes(int argc, char **argv)
 	a = NULL;
 	i = 1;
 	if (argc < 2)
-		ft_error();
+		exit(0);
 	if (argc == 2)
 		ft_subprocess(argv);
 	else
