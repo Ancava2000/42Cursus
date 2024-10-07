@@ -18,6 +18,10 @@ void	ft_error(void)
 	exit(1);
 }
 
+/*This function checks if there are any duplicated number. 
+The temp variable stores the next number in the list, comparing the first number (stored in "a"),
+with all the numbers (temp) of the list. Next, the "a" stores the next number and the process 
+is repeated until there are no numbers to check. If the "a" and temp variables match, returns 1.*/
 int	ft_checkdup(t_stack	*a)
 {
 	t_stack	*temp;
@@ -36,6 +40,7 @@ int	ft_checkdup(t_stack	*a)
 	return (0);
 }
 
+/* Function that checks if the initial input numbers are ordered from smallest to largest */
 int	ft_checksort(t_stack	*stack_a)
 {
 	int	t;
