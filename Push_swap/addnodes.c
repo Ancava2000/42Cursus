@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//Function that converts the input string to numbers.
 int	atoi2(const char *str)
 {
 	long long int	i;
@@ -40,6 +41,8 @@ int	atoi2(const char *str)
 	return (neg * i);
 }
 
+/* Function that splits the string according to the spaces, 
+tranforms them to numbers and adds them to the stack  */
 t_stack	*ft_subprocess(char **argv)
 {
 	t_stack	*a;
@@ -61,6 +64,12 @@ t_stack	*ft_subprocess(char **argv)
 	return (a);
 }
 
+/* It creates an empty stack "a" and checks the number of argc.
+If there are less than 2 (meaning that the only input is the program's name),
+it exits the program. If there are two, it means that the input numbers are a string,
+so it enters the subprocess function to split and convert them to numbers. 
+Lastly, it there are more argc, in a loop, it converts the input to numbers and adds
+each one to the stack "a".*/
 t_stack	*ft_addnodes(int argc, char **argv)
 {
 	t_stack	*a;
