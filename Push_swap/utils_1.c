@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Function that find the min number in the given stack, with the help of a temporal variable
 int	ft_min(t_stack *a)
 {
 	int	i;
@@ -26,6 +27,7 @@ int	ft_min(t_stack *a)
 	return (i);
 }
 
+// Function that find the max number in the given stack, with the help of a temporal variable
 int	ft_max(t_stack *a)
 {
 	int	i;
@@ -40,6 +42,7 @@ int	ft_max(t_stack *a)
 	return (i);
 }
 
+// Function that finds the index of a number in the stack 
 int	ft_find_index(t_stack *a, int nbr)
 {
 	int	i;
