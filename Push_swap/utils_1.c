@@ -57,6 +57,9 @@ int	ft_find_index(t_stack *a, int nbr)
 	return (i);
 }
 
+/* Function that returns the index number in stack "b" that the int pushed_nbr will be get once it's pushed.
+This function follows the rule that each "a" node has a target "b" node, this being the closest smallest number to the "a" node
+If there is no closest smallest number, the target node is the maximum number */
 int	ft_connection_in_b(t_stack *stack_b, int pushed_nbr)
 {
 	int		i;
@@ -80,6 +83,9 @@ int	ft_connection_in_b(t_stack *stack_b, int pushed_nbr)
 	return (i);
 }
 
+/* Function that returns the index number in stack "a" that the int pushed_nbr will be get once it's pushed.
+This function follows the rule that each "b" node has a target "a" node, this being the closest biggest number to the "b" node
+If there is no closest biggest number, the target node is the minimum number */
 int	ft_connection_in_a(t_stack *stack_a, int pushed_nbr)
 {
 	int		i;
