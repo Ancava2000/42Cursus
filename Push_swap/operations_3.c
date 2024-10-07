@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Reverse rotate a: shift down all elements of stack a by 1
 void	ft_rra(t_stack **a)
 {
 	t_stack	*aux;
@@ -37,6 +38,7 @@ void	ft_rra(t_stack **a)
 	}
 }
 
+// Reverse rotate b: shift down all elements of stack b by 1
 void	ft_rrb(t_stack **b)
 {
 	t_stack	*aux;
@@ -62,6 +64,7 @@ void	ft_rrb(t_stack **b)
 	}
 }
 
+// rra and rrb at the same time. Second part.
 void	ft_rrr_2(t_stack **b)
 {
 	t_stack	*aux;
@@ -87,6 +90,7 @@ void	ft_rrr_2(t_stack **b)
 	}
 }
 
+// rra and rrb at the same time.
 void	ft_rrr(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;
