@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-//Function that converts the input string to numbers.
+// Function that converts the input string to numbers.
 int	atoi2(const char *str)
 {
 	long long int	i;
@@ -42,7 +42,8 @@ int	atoi2(const char *str)
 }
 
 /* Function that splits the string according to the spaces, 
-tranforms them to numbers and adds them to the stack  */
+tranforms them to numbers and adds them to the stack.
+Lastly, it frees the string stored in the temp variable */
 t_stack	*ft_subprocess(char **argv)
 {
 	t_stack	*a;
