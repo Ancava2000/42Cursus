@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Swap a: swap the first 2 elements at the top of stack a
 void	ft_sa(t_stack **a)
 {
 	t_stack	*aux;
@@ -26,6 +27,7 @@ void	ft_sa(t_stack **a)
 	}
 }
 
+// Swap b: swap the first 2 elements at the top of stack b
 void	ft_sb(t_stack **b)
 {
 	t_stack	*aux;
@@ -40,6 +42,7 @@ void	ft_sb(t_stack **b)
 	}
 }
 
+// sa and sb at the same time.
 void	ft_ss(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;
@@ -58,6 +61,7 @@ void	ft_ss(t_stack **a, t_stack **b)
 	}
 }
 
+// Push a: take the first element at the top of b and put it at the top of a.
 void	ft_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;
@@ -72,6 +76,7 @@ void	ft_pa(t_stack **a, t_stack **b)
 	}
 }
 
+// Push b: take the first element at the top of a and put it at the top of b.
 void	ft_pb(t_stack **a, t_stack **b)
 {
 	t_stack	*aux;
