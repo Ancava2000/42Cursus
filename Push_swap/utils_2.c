@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+// Function that returns the size of the stack
 int	ft_sizelist(t_stack *lst)
 {
 	size_t	n;
@@ -25,6 +26,7 @@ int	ft_sizelist(t_stack *lst)
 	return (n);
 }
 
+// Function that returns the last node of the stack
 t_stack	*ft_ltlast(t_stack *lst)
 {
 	if (!lst)
@@ -34,6 +36,7 @@ t_stack	*ft_ltlast(t_stack *lst)
 	return (lst);
 }
 
+// Function that adds a number at the end of the stack
 void	ft_add_back(t_stack **stack, t_stack *stack_new)
 {
 	if (!stack)
@@ -44,6 +47,7 @@ void	ft_add_back(t_stack **stack, t_stack *stack_new)
 		(ft_ltlast(*stack))->next = stack_new;
 }
 
+// Function that creates the stack
 t_stack	*ft_stack_new(int content)
 {
 	t_stack	*new;
