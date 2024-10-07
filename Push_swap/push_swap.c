@@ -11,7 +11,11 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/* It creates the stack "a" and adds the input nodes(numbers). 
+If there's no stack "a" or if there is a number repeated (checkdup),
+it frees the stack and shows the error message.  
+Finally, if the nodes in stack "a" aren't sort (checksort),
+they are sorted by the function and freed.*/
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
