@@ -13,7 +13,7 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-/* This function sorts and pushes nodes to stack "b" until there are only three unsorted nodes in stack "a". 
+/* This function sorts and pushes nodes to stack "b" until there are only three nodes in stack "a". 
 First it finds the rotate case with the less moves. 
 Then it applies the correct case and exits the second loop (the apply case function returns -1) */
 void	ft_sort_b_until_three(t_stack **stack_a, t_stack **stack_b)
