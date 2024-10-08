@@ -13,6 +13,9 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+/* This function sorts and pushes nodes to stack "b" until there are only three unsorted nodes in stack "a". 
+First it finds the rotate case with the less moves. 
+Then it applies the correct case and exits the second loop (the apply case function returns -1) */
 void	ft_sort_b_until_three(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
@@ -39,6 +42,10 @@ void	ft_sort_b_until_three(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
+/* This function push nodes from "a" to "b" until there are three nodes in "a". 
+In each push, it makes sure that stack "a" is not sorted. 
+When three nodes are left in stack "a" and they're not sorted, 
+it calls the ft_sort_b_until_three function. Returns the sorted stack "b" */
 t_stack	*ft_sort_b(t_stack **stack_a)
 {
 	t_stack	*stack_b;
@@ -55,6 +62,10 @@ t_stack	*ft_sort_b(t_stack **stack_a)
 	return (stack_b);
 }
 
+/* This function sorts and pushes nodes to stack "a" until stack "b" is empty. 
+First it finds the rotate case with the less moves. 
+Then it applies the correct case and exits the second loop (the apply case function returns -1) 
+Finally, it returns the stack "a" */
 t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
@@ -82,6 +93,12 @@ t_stack	**ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 	return (stack_a);
 }
 
+/* This function sorts the stack "a" if there are more than two nodes.
+First, it pushes from stack "a" to "b" while sorting "b".
+Second, it pushes back to stack "a" while sorting it.
+Finally, the variable i stores the index of the minimum number in stack "a",
+and checks if the index of the min is above of below the list's median.
+If is above, it does ra. If is below, it does rra */
 void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_b;
