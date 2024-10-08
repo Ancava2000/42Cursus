@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// From stack "b" to stack "a"
+// This function calculates the number of moves needed to put the nodes in first position. ra + rb case 
 int	ft_case_rarb_a(t_stack *a, t_stack *b, int nbr)
 {
 	int	i;
@@ -22,6 +24,7 @@ int	ft_case_rarb_a(t_stack *a, t_stack *b, int nbr)
 	return (i);
 }
 
+// This function calculates the number of moves needed to put the nodes in first position. rra + rrb case 
 int	ft_case_rrarrb_a(t_stack *a, t_stack *b, int nbr)
 {
 	int	i;
@@ -34,6 +37,7 @@ int	ft_case_rrarrb_a(t_stack *a, t_stack *b, int nbr)
 	return (i);
 }
 
+// This function calculates the number of moves needed to put the nodes in first position. rra + rb case 
 int	ft_case_rrarb_a(t_stack *a, t_stack *b, int nbr)
 {
 	int	i;
@@ -45,6 +49,7 @@ int	ft_case_rrarb_a(t_stack *a, t_stack *b, int nbr)
 	return (i);
 }
 
+// This function calculates the number of moves needed to put the nodes in first position. ra + rrb case 
 int	ft_case_rarrb_a(t_stack *a, t_stack *b, int nbr)
 {
 	int	i;
