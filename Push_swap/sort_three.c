@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+/* This function sorts the stack "a" if there are three numbers.
+First = 1 3 2 -> 2 1 3 -> 1 2 3
+Second = 3 2 1 -> 2 1 3 -> 1 2 3
+Third = 2 3 1 -> 1 2 3
+      = 2 1 3 -> 1 2 3
+*/
 void	ft_sort_three(t_stack **stack_a)
 {
 	if (ft_min(*stack_a) == (*stack_a)-> nbr)
