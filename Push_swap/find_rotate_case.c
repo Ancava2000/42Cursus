@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+/* This function finds the adecuate rotation combination with the less number of moves.
+Within a loop, it compares the variable i (with the number of moves of case rrarrb_b),
+with each case. If the original number is bigger, the variable stores the number of moves of the new case,
+until it gets the smallest number. In the last step the temp variable starts the loop with the next node.
+In each case, after the rotations it always pushes the node. In this case, it pushes the node from
+stack "a" to stack "b" */
 int	ft_find_rotate_case_ab(t_stack *a, t_stack *b)
 {
 	int		i;
@@ -34,6 +40,12 @@ int	ft_find_rotate_case_ab(t_stack *a, t_stack *b)
 	return (i);
 }
 
+/* This function finds the adecuate rotation combination with the less number of moves.
+Within a loop, it compares the variable i (with the number of moves of case rrarrb_b),
+with each case. If the original number is bigger, the variable stores the number of moves of the new case,
+until it gets the smallest number. In the last step the temp variable starts the loop with the next node.
+In each case, after the rotations it always pushes the node. In this case, it pushes the node from
+stack "b" to stack "a" */
 int	ft_find_rotate_case_ba(t_stack *a, t_stack *b)
 {
 	int		i;
