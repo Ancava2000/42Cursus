@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+/* This function applies the ra, rb or rr rotation operation according to the condition,
+until the nodes are in the first position. It always does the pb or pa operation. */
 int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char n)
 {
 	if (n == 'a')
@@ -37,6 +39,8 @@ int	ft_apply_rarb(t_stack **a, t_stack **b, int c, char n)
 	return (-1);
 }
 
+/* This function applies the rra, rrb or rrr reverse rotation operation according to the condition,
+until the nodes are in the first position. It always does the pb or pa operation. */
 int	ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char n)
 {
 	if (n == 'a')
@@ -62,6 +66,8 @@ int	ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char n)
 	return (-1);
 }
 
+/* This function applies the rra or rb rotation operation according to the condition,
+until the nodes are in the first position. It always does the pb or pa operation. */
 int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char n)
 {
 	if (n == 'a')
@@ -83,6 +89,8 @@ int	ft_apply_rrarb(t_stack **a, t_stack **b, int c, char n)
 	return (-1);
 }
 
+/* This function applies the ra or rrb rotation operation according to the condition,
+until the nodes are in the first position. It always does the pb or pa operation. */
 int	ft_apply_rarrb(t_stack **a, t_stack **b, int c, char n)
 {
 	if (n == 'a')
