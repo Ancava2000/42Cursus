@@ -53,7 +53,7 @@ t_stack	*ft_subprocess(char **argv)
 
 	a = NULL;
 	i = 0;
-	temp = ft_split(argv[i], 32);
+	temp = ft_split(argv[1], 32);
 	while (temp[i])
 	{
 		j = atoi2(temp[i]);
@@ -82,7 +82,7 @@ t_stack	*ft_addnodes(int argc, char **argv)
 	if (argc < 2)
 		exit(0);
 	if (argc == 2)
-		ft_subprocess(argv);
+		a = ft_subprocess(argv);
 	else
 	{
 		while (i < argc)
