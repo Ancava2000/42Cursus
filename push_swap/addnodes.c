@@ -26,8 +26,8 @@ int	atoi2(const char *str)
 		neg = -1;
 		str++;
 	}
-	if (*str == 0)
-		ft_error();
+	if (*str == 0) // At the beginning we assign a value of 0 to the character. If the character is empty after all the checks, we write the error
+		ft_error(); // This specific error is for cases where there's a empty string ("")
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
