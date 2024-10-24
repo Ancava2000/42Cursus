@@ -35,7 +35,7 @@ int	atoi2(const char *str)
 		i = i * 10 + (*str - '0');
 		str++;
 	}
-	if ((neg * i) > 2147483648 || (neg * i) < -2147483648)
+	if ((neg * i) > 2147483647 || (neg * i) < -2147483648)
 		ft_error();
 	return (neg * i);
 }
