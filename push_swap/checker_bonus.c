@@ -65,7 +65,7 @@ void	ft_read_line(t_stack **a, t_stack **b, char *line)
 	}
 	if (*b)
 		write(1, "KO\n", 3);
-	if (!ft_checksort(*a))
+	else if (!ft_checksort(*a))
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);
