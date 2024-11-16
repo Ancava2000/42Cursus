@@ -34,6 +34,21 @@ void	ft_size_map(t_map *map, char **array)
 	map-> height = i * 64;
 }
 
+int	ft_has_empty_lines(char *str)
+{
+	while (*str)
+	{
+		if (*str == '\n' && *(str + 1) == '\n')
+		{
+			free(str);
+			ft_printf(ERROR_NO_LINE);
+			return (FALSE);
+		}
+		str++;
+	}
+	return (TRUE);
+}
+
 char	**ft_read_map(char *fn)
 {
 	int		fd;
@@ -55,6 +70,12 @@ char	**ft_read_map(char *fn)
 	if (n == -1 || n == 0)
 	{
 		free(temp);
+		return (0);
+	}
+	if (ft_has_empty_lines(temp))
+	{
+		free(temp);
+		ft_printf(ERROR_NO_LINE);
 		return (0);
 	}
 	array = ft_split(temp, '\n');
