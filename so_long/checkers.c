@@ -77,9 +77,10 @@ int	ft_check_walls(char **array)
 		x++;
 	}
 	y = 0;
-	while (x < (line - 1))
+	while (y < line)
 	{
-		if (array[y][0] != '1' || array[ft_strlen(array[0])][0] != '1')
+		row = ft_strlen(array[y]);
+		if (array[y][0] != '1' || array[y][row - 1] != '1')
 			return (FALSE);
 		y++;
 	}
