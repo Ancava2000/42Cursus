@@ -31,55 +31,73 @@ void	ft_size_map(t_map *map, char **array)
 	map -> width = ft_strlen(array[0]) * 64;
 	while (array[i])
 		i++;
-	map-> height = i * 64;
+	map -> height = i * 64;
 }
 
 int	ft_has_empty_lines(char *str)
 {
+	char	*end;
+
+	end = 0;
+	if (*str == '\0' || *str == '\n')
+		return (FALSE);
 	while (*str)
 	{
-		if (*str == '\n' && *(str + 1) == '\n')
-		{
-			free(str);
-			ft_printf(ERROR_NO_LINE);
+		if (*(str + 1) == '\n' && *(str + 2) == '\n')
 			return (FALSE);
-		}
 		str++;
 	}
+	end = str + ft_strlen(str);
+	if (*(end - 1) == '\n')
+		return (FALSE);
 	return (TRUE);
 }
 
-char	**ft_read_map(char *fn)
+char	*ft_read_file(char *fn)
 {
 	int		fd;
 	int		n;
 	char	*temp;
-	char	**array;
 
-	n = 0;
 	temp = ft_calloc(BUFF_SIZE + 1, sizeof(char));
 	if (!temp)
-		return (0);
+		return (NULL);
 	fd = open(fn, O_RDONLY);
 	if (fd < 0)
 	{
 		free(temp);
-		return (0);
+		return (NULL);
 	}
 	n = read(fd, temp, BUFF_SIZE);
-	if (n == -1 || n == 0)
+	if (n <= 0)
 	{
 		free(temp);
-		return (0);
+		close(fd);
+		return (NULL);
+	}
+	close(fd);
+	return (temp);
+}
+
+char	**ft_read_map(char *fn)
+{
+	char	*temp;
+	char	**array;
+
+	temp = ft_read_file(fn);
+	if (!temp)
+	{
+		free(temp);
+		return (NULL);
 	}
 	if (ft_has_empty_lines(temp))
 	{
 		free(temp);
 		ft_printf(ERROR_NO_LINE);
-		return (0);
+		return (NULL);
 	}
 	array = ft_split(temp, '\n');
 	free(temp);
-	close(fd);
 	return (array);
 }
+
