@@ -48,7 +48,7 @@ $(NAME): $(LIBFT) $(MLX42)
 $(LIBFT):
 	@echo "$(HOT_PINK)$(BOLD) Compiling libft...$(DEF_COLOR)"
 	@make -C Libft
-	@echo "$(CYAN_2)$(ITALIC) libft.a created ✓$(DEF_COLOR)"
+	@echo "$(CYAN_2)$(ITALIC) libft.a and OBJS created ✓$(DEF_COLOR)"
 # -------
 
 # MLX42 compilation
