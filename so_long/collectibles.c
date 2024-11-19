@@ -74,5 +74,5 @@ void	ft_count_collectibles(t_map *map)
 	}
 	if (map -> array[map ->img->player->instances->y / 64]
 		[map ->img->player->instances->x / 64] == 'E')
-		ft_check_win(map);
+		ft_check_ending(map);
 }
