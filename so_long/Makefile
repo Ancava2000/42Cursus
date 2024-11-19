@@ -62,7 +62,7 @@ $(MLX42):
 # Clean
 # -------
 clean:
-	@echo "$(DARK_CYAN)$(BOLD) Removing so_long and libraries...$(DEF_COLOR)"
+	@echo "$(DARK_CYAN)$(BOLD) Removing so_long and .a...$(DEF_COLOR)"
 	@rm -rf $(NAME)
 
 fclean: clean
