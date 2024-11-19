@@ -7,6 +7,7 @@ CFILES	= so_long.c \
 		collectibles.c \
 		moves.c \
 		endscreen.c \
+		enemies.c \
 
 LIBFT = Libft/libft.a
 MLX42 = MLX42/build/libmlx42.a
@@ -16,10 +17,7 @@ NAME = so_long
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MLX42)
-	@gcc -Wall -Wextra -Werror $(CFILES) $(LIBFT) $(MLX42) -Iinclude -ldl -lglfw -pthread -lm  -DDEBUG=ON -o $(NAME)
-
-debug: $(LIBFT) $(MLX42)
-	@gcc -Wall -Wextra -Werror $(CFILES) $(LIBFT) $(MLX42) -Iinclude -ldl -lglfw -pthread -lm -o $(NAME) -g -fsanitize=address
+	@gcc -Wall -Wextra -Werror $(CFILES) $(LIBFT) $(MLX42) -Iinclude -ldl -lglfw -pthread -lm -o $(NAME)
 
 $(LIBFT):
 	@make -C Libft
