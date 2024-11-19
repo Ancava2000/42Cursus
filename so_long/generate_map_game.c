@@ -12,29 +12,6 @@
 
 #include "so_long.h"
 
-/*
-void	ft_close_exits(t_map *map)
-{
-	map->exit_image[0]->enabled = false;
-	map->exit_image[1]->enabled = true;
-}
-
-void	ft_render_exit(int y, int x, t_map *map)
-{
-	map->exit_image = malloc(sizeof(mlx_image_t *) * 2);
-	if (!map->exit_image)
-		return ;
-	map->exit_image[0] = mlx_texture_to_image(map->mlx,
-			map->textu->close_exit);
-	map->exit_image[1] = mlx_texture_to_image(map->mlx,
-			map->textu->open_exit);
-	if (mlx_image_to_window(map->mlx, map->exit_image[0], y * 64, x * 64) < 0
-		|| mlx_image_to_window(map->mlx, map->exit_image[1],
-			y * 64 x * 264 < 0)
-		return ;
-	ft_close_exits(map);
-}
-*/
 void	ft_print_floor(t_map *map, t_image *image)
 {
 	int	x;
@@ -52,7 +29,8 @@ void	ft_print_floor(t_map *map, t_image *image)
 			if (map -> array[y][x] == 'E')
 			{
 				mlx_image_to_window(map->mlx, image->open_exit, x * 64, y * 64);
-				mlx_image_to_window(map->mlx, image->close_exit, x * 64, y * 64);
+				mlx_image_to_window(map->mlx,
+					image->close_exit, x * 64, y * 64);
 			}
 			x++;
 		}
@@ -77,6 +55,9 @@ void	ft_print_elements(t_map *map, t_image *image)
 					x * 64, y * 64);
 			if (map -> array[y][x] == 'P')
 				mlx_image_to_window(map-> mlx, image -> player,
+					x * 64, y * 64);
+			if (map -> array[y][x] == 'A')
+				mlx_image_to_window(map-> mlx, image -> alien,
 					x * 64, y * 64);
 			x++;
 		}
