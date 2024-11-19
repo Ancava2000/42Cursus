@@ -12,12 +12,16 @@
 
 #include "so_long.h"
 
-int	ft_empty_map(char **array)
+int	ft_check_ber(char *fn)
 {
-	if (array[0])
-		return (TRUE);
-	else
+	int	i;
+
+	i = ft_strlen(fn) - 1;
+	if (fn[i] != 'r' || fn[i - 1] != 'e'
+		|| fn[i - 2] != 'b'
+		|| fn[i - 3] != '.')
 		return (FALSE);
+	return (TRUE);
 }
 
 int	ft_check_rectangle(char **array)
@@ -50,7 +54,7 @@ int	ft_check_content(char **array)
 		{
 			if (!(array[y][x] == '0' || array[y][x] == '1' ||
 				array[y][x] == 'C' || array[y][x] == 'P' ||
-				array[y][x] == 'E'))
+				array[y][x] == 'E'|| array[y][x] == 'A'))
 				return (FALSE);
 			else
 				x++;
@@ -89,8 +93,6 @@ int	ft_check_walls(char **array)
 
 int	ft_map_check(char **array)
 {
-	if (ft_empty_map(array) == FALSE)
-		return (ft_printf(ERROR_EMPTY), FALSE);
 	if (ft_check_rectangle(array) == FALSE)
 		return (ft_printf(ERROR_RECT), FALSE);
 	if (ft_check_content(array) == FALSE)
