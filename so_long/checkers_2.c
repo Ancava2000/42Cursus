@@ -12,18 +12,6 @@
 
 #include "so_long.h"
 
-int	ft_check_ber(char *fn)
-{
-	int	i;
-
-	i = ft_strlen(fn) - 1;
-	if (fn[i] != 'r' || fn[i - 1] != 'e'
-		|| fn[i - 2] != 'b'
-		|| fn[i - 3] != '.')
-		return (FALSE);
-	return (TRUE);
-}
-
 int	ft_min_elements(char **array)
 {
 	int	y;
@@ -49,5 +37,87 @@ int	ft_min_elements(char **array)
 	}
 	if (nb_exit != 2 || nb_collect < 1)
 		return (FALSE);
+	return (TRUE);
+}
+
+int	*ft_scan_player(char **copy)
+{
+	int	y;
+	int	x;
+	int	*pos;
+
+	pos = (int *)ft_calloc(2, sizeof(int));
+	y = 0;
+	while (copy[y])
+	{
+		x = 0;
+		while (copy[y][x])
+		{
+			if (copy[y][x] == 'P')
+			{
+				pos[0] = y;
+				pos[1] = x;
+			}
+			x++;
+		}
+		y++;
+	}
+	return (pos);
+}
+
+void	ft_flood_fill(t_map *map, int y, int x)
+{
+	if (!(x < 1 || y < 1 || x >= map -> width || y >= map -> height
+			|| map -> copy[y][x] == '1' || map -> copy[y][x] == '*'))
+	{
+		map -> copy[y][x] = '*';
+		ft_flood_fill(map, y + 1, x);
+		ft_flood_fill(map, y - 1, x);
+		ft_flood_fill(map, y, x + 1);
+		ft_flood_fill(map, y, x - 1);
+	}
+}
+
+int	ft_check_flood(char **copy)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	while (copy[y])
+	{
+		x = 0;
+		while (copy[y][x])
+		{
+			if (!(copy[y][x] == '1' || copy[y][x] == '0'
+				|| copy[y][x] == '*'))
+				return (FALSE);
+			x++;
+		}
+		y++;
+	}
+	return (TRUE);
+}
+
+int	ft_check_path(t_map *map, char *fn)
+{
+	int	*pos;
+
+	map -> copy = ft_read_map(fn);
+	pos = ft_scan_player(map -> copy);
+	if (!(pos))
+	{
+		free(pos);
+		return (1);
+	}
+	ft_flood_fill(map, pos[0], pos[1]);
+	if (ft_check_flood(map -> copy) == FALSE)
+	{
+		free(pos);
+		free(map -> copy);
+		return (ft_printf(ERROR_PATH), FALSE);
+	}
+	free(pos);
+	free(map -> copy);
 	return (TRUE);
 }
