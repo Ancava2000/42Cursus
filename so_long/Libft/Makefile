@@ -73,11 +73,11 @@ PRINTF_OBJECT = $(addprefix $(PRINTF_OBJ), $(addsuffix .o, $(PRINTF_NAMES)))
 # -------
 AR				= ar rcs
 RM				= rm -rf
-NAME			= libft.a
 # -------
 
 # Main compilation
 # -------
+NAME		= libft.a
 all: $(NAME)
 
 $(NAME): $(LIBFT_OBJECT) $(PRINTF_OBJECT)
