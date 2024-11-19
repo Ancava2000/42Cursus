@@ -24,7 +24,7 @@ void	ft_moves(t_map *map)
 }
 
 
-void	ft_check_win(t_map *map)
+void	ft_check_ending(t_map *map)
 {
 	if (map -> c_collectible == map -> t_collectible)
 	{
