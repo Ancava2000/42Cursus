@@ -40,8 +40,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "MLX42/include/MLX42/MLX42.h"
-# include "Libft/inc/libft/libft.h"
+# include "../MLX42/include/MLX42/MLX42.h"
+# include "../Libft/inc/libft/libft.h"
 
 //textures
 typedef struct s_texture
@@ -52,7 +52,6 @@ typedef struct s_texture
 	mlx_texture_t	*open_exit;
 	mlx_texture_t	*close_exit;
 	mlx_texture_t	*player;
-	mlx_texture_t	*alien;
 }	t_texture;
 
 //images
@@ -64,7 +63,6 @@ typedef struct s_image
 	mlx_image_t		*player;
 	mlx_image_t		*open_exit;
 	mlx_image_t		*close_exit;
-	mlx_image_t		*alien;
 }	t_image;
 
 //map data
@@ -104,7 +102,6 @@ void	ft_print_elements(t_map *map, t_image *image);
 void	ft_print_floor(t_map *map, t_image *image);
 // Movements
 void	ft_key_hook(mlx_key_data_t keydata, void *param);
-void	ft_moves(t_map *map);
 //Enemies
 void	ft_alien(t_map *map);
 // Collectibles check

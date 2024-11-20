@@ -13,16 +13,26 @@ VIOLET =        \033[38;5;134m
 
 # Sources
 # -------
-CFILES	= so_long.c \
-		generate_map_array.c \
-		checkers.c \
-		checkers_2.c \
-		generate_map_images.c \
-		generate_map_game.c \
-		collectibles.c \
-		moves.c \
-		endscreen.c \
-		enemies.c \
+CFILES	= src/so_long.c \
+		src/generate_map_array.c \
+		src/checkers.c \
+		src/checkers_2.c \
+		src/generate_map_images.c \
+		src/generate_map_game.c \
+		src/collectibles.c \
+		src/moves.c \
+		src/endscreen.c \
+
+CBONUS	= src_bonus/so_long_bonus.c \
+		src_bonus/generate_map_array_bonus.c \
+		src_bonus/checkers_bonus.c \
+		src_bonus/checkers_2_bonus.c \
+		src_bonus/generate_map_images_bonus.c \
+		src_bonus/generate_map_game_bonus.c \
+		src_bonus/collectibles_bonus.c \
+		src_bonus/moves_bonus.c \
+		src_bonus/endscreen_bonus.c \
+		src_bonus/enemies_bonus.c \
 # -------
 
 # Libreries compiled
@@ -34,11 +44,18 @@ MLX42 = MLX42/build/libmlx42.a
 # Main compilation
 # -------
 NAME = so_long
+BONUS = so_long_bonus
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MLX42)
 	echo "$(HOT_PINK)$(BOLD) Compiling ...$(DEF_COLOR)"
 	@gcc -Wall -Wextra -Werror $(CFILES) $(LIBFT) $(MLX42) -Iinclude -ldl -lglfw -pthread -lm -o $(NAME)
+	@echo "$(CYAN_2)$(ITALIC) $(NAME) created ✓$(DEF_COLOR)"
+	@echo "$(CYAN_2)$(ITALIC) $(NAME) indexed ✓$(DEF_COLOR)"
+
+bonus :
+	echo "$(HOT_PINK)$(BOLD) Compiling bonus...$(DEF_COLOR)"
+	@gcc -Wall -Wextra -Werror $(CBONUS) $(LIBFT) $(MLX42) -Iinclude -ldl -lglfw -pthread -lm -o $(BONUS)
 	@echo "$(CYAN_2)$(ITALIC) $(NAME) created ✓$(DEF_COLOR)"
 	@echo "$(CYAN_2)$(ITALIC) $(NAME) indexed ✓$(DEF_COLOR)"
 # -------
@@ -62,11 +79,11 @@ $(MLX42):
 # Clean
 # -------
 clean:
-	@echo "$(DARK_CYAN)$(BOLD) Removing so_long and .a...$(DEF_COLOR)"
-	@rm -rf $(NAME)
+	@echo "$(DARK_CYAN)$(BOLD) Removing so_long and bonus...$(DEF_COLOR)"
+	@rm -rf $(NAME) $(BONUS)
 
 fclean: clean
-	@echo "$(DARK_CYAN)$(BOLD) Removing .o in libft...$(DEF_COLOR)"
+	@echo "$(DARK_CYAN)$(BOLD) Removing .o and .a in libft...$(DEF_COLOR)"
 	@make fclean -C Libft
 	@echo "$(LIGHT_PINK)$(ITALIC) Libft OBJS deleted :($(DEF_COLOR)"
 	@echo "$(VIOLET)$(ITALIC) all deleted D:$(DEF_COLOR)"

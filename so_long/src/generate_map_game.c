@@ -56,9 +56,6 @@ void	ft_print_elements(t_map *map, t_image *image)
 			if (map -> array[y][x] == 'P')
 				mlx_image_to_window(map-> mlx, image -> player,
 					x * 64, y * 64);
-			if (map -> array[y][x] == 'A')
-				mlx_image_to_window(map-> mlx, image -> alien,
-					x * 64, y * 64);
 			x++;
 		}
 		y++;

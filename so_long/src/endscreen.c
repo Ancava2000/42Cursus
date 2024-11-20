@@ -12,18 +12,6 @@
 
 #include "so_long.h"
 
-void	ft_moves(t_map *map)
-{
-	char	*mov;
-
-	if (map -> wnd_moves)
-		mlx_delete_image(map -> mlx, map -> wnd_moves);
-	mov = ft_itoa(map -> c_moves);
-	map -> wnd_moves = mlx_put_string(map -> mlx, mov, 46, 50);
-	free (mov);
-}
-
-
 void	ft_check_ending(t_map *map)
 {
 	if (map -> c_collectible == map -> t_collectible)
