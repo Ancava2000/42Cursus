@@ -114,10 +114,10 @@ int	ft_check_path(t_map *map, char *fn)
 	if (ft_check_flood(map -> copy) == FALSE)
 	{
 		free(pos);
-		free(map -> copy);
+		ft_free_array(map -> copy);
 		return (ft_printf(ERROR_PATH), FALSE);
 	}
 	free(pos);
-	free(map -> copy);
+	ft_free_array(map -> copy);
 	return (TRUE);
 }
