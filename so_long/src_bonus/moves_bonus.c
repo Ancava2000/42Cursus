@@ -79,6 +79,6 @@ void	ft_key_hook(mlx_key_data_t keydata, void *param)
 		ft_move_left(map);
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_RELEASE)
 		mlx_close_window(map->mlx);
-	ft_alien(map);
+	check_player_collision_with_aliens(map);
 	ft_count_collectibles(map);
 }
