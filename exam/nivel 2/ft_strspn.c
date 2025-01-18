@@ -3,8 +3,9 @@
 size_t	ft_strspn(const char *s, const char *accept)
 {
     int i;
-    int coun;
-    
+    int count;
+
+    count = 0;
     while (*s)
     {
         while (*s != accept[i])
