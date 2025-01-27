@@ -5,7 +5,7 @@ int ft_pgcd(int s1, int s2)
 {
     unsigned int i;
 
-    i = s1
+    i = s1;
     while (s1 > 0)
     {
         if (s1 % i == 0 && s2 % i == 0)
