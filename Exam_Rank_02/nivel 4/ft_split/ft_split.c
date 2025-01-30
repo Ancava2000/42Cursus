@@ -70,3 +70,24 @@ char	**ft_split(char *str)
     split[i] = '\0';  // IMPORTANT end with NULL
     return (split);
 }
+
+/*
+void print_split(char **split)
+{
+    int i = 0;
+    while (split[i] != NULL)
+    {
+        printf("Word %d: %s\n", i + 1, split[i]);
+        i++;
+    }
+}
+
+int main()
+{
+    char str[] = "  Hello World  and hello        42 !!";
+    char **result = ft_split(str);
+    printf("Split words:\n");
+    print_split(result);
+    return (0);
+}
+*/
