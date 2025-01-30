@@ -26,7 +26,7 @@ int count_word(char *str)
     return (word);  // return count
 }
 
-char *count_letters(char *str)
+char *count_letters(char *str)   // IMPORTANT, RETURNS CHAR *
 {
     char *letters;
     int i;
