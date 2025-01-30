@@ -1,3 +1,4 @@
+```
 Assignment name  : flood_fill
 Expected files   : flood_fill.c
 Allowed functions: -
@@ -75,7 +76,7 @@ $> gcc flood_fill.c test.c -o test; ./test
 10010001
 10110001
 11100001
-
+``` 
 FFFFFFFF
 F000F00F
 F00F000F
