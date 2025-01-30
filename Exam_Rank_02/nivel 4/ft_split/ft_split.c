@@ -14,16 +14,16 @@ int count_word(char *str)
     
     while (*str)
     {
-        while (*str && ft_is_space(*str))
+        while (*str && ft_is_space(*str))   // skip spaces
             str++;
         if (*str && !ft_is_space(*str))
         {
-            word++;
-            while (*str && !ft_is_space(*str))
+            word++;                        // add to the counter of words
+            while (*str && !ft_is_space(*str))  // skip the rest of the word
                 str++;
         }
     }
-    return (word);
+    return (word);  // return count
 }
 
 char *count_letters(char *str)
@@ -32,13 +32,13 @@ char *count_letters(char *str)
     int i;
     
     i = 0;
-    while (str[i] && !ft_is_space(str[i]))
+    while (str[i] && !ft_is_space(str[i]))   // count the letters of the word
         i++;
-    letters = (char *)malloc(sizeof(char) * (i + 1));
+    letters = (char *)malloc(sizeof(char) * (i + 1));   // malloc of the word. char and i + 1 for the NULL
     if (!letters)
         return (NULL);
-    i = 0;
-    while (str[i] && !ft_is_space(str[i]))
+    i = 0;                // return to 0
+    while (str[i] && !ft_is_space(str[i]))  // iterate each letter of the word and copy to the variable with malloc
     {
         letters[i] = str[i];
         i++;
@@ -51,22 +51,22 @@ char	**ft_split(char *str)
 {
     int i;
     
-    char **split = (char **)malloc(sizeof(char *) * (count_word(str) + 1));
+    char **split = (char **)malloc(sizeof(char *) * (count_word(str) + 1));  // 1. malloc with the number of words. char * and + 1 for the null character
     if (!(split))
         return (NULL);
     i = 0;
     while(*str)
     {
-        while (*str && ft_is_space(*str))
+        while (*str && ft_is_space(*str))  // skip the spaces
             str++;
-        if (*str && !ft_is_space(*str))
+        if (*str && !ft_is_space(*str))  // first letter of the word
         {
-            split[i] = count_letters(str);
+            split[i] = count_letters(str);  // 2. malloc with the number of letters in each word
             i++;
-            while(*str && !ft_is_space(*str))
+            while(*str && !ft_is_space(*str))  // skip the rest of the word
                 str++;
         }
     }
-    split[i] = '\0';
+    split[i] = '\0';  // IMPORTANT end with NULL
     return (split);
 }
