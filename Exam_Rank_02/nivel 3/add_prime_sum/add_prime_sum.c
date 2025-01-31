@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-int	atoi(char *s)
+int	ft_atoi(char *s)
 {
 	int	res = 0;
 
@@ -24,15 +24,15 @@ void	putstr(int nb)
 
 int	isprime(int nb)
 {
-	int	i = 2;
+	int	i = 2;  // start with 2!!
 
 	if (nb <= 1)
 		return (0);
-	while (i * i <= nb)
+	while (i * i <= nb)   // remember the =
 	{
 		if (nb % i == 0)
 			return (0);
-		i++;
+		i++;            // add until nb % i == 0 or nb is prime
 	}
 	return (1);
 }
@@ -45,14 +45,14 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		sum = 0;
-		nb = atoi(argv[1]);
+		nb = ft_atoi(argv[1]);   //1. convert str to int
 		while (nb > 0)
 		{
 			if (isprime(nb))
-				sum += nb;
+				sum += nb;   //2. add prime nb to sum
 			nb--;
 		}
-		putstr(sum);
+		putstr(sum);  //3. convert int to char to write
 	}
 	if (argc != 2)
 		putstr(0);
