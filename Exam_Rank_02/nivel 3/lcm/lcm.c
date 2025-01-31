@@ -13,7 +13,7 @@ unsigned int    lcm(unsigned int a, unsigned int b)
         n++;
     }
 } 
-``` 
+/* 
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,4 +24,4 @@ int main(int argc, char **argv)
 	printf("%d\n", lcm(a, b));
     return (0);
 }
-```
+*/
