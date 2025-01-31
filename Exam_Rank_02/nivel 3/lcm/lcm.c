@@ -13,3 +13,15 @@ unsigned int    lcm(unsigned int a, unsigned int b)
         n++;
     }
 } 
+``` 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv)
+{
+    unsigned int a = atoi(argv[1]);
+	unsigned int b = atoi(argv[2]);
+	printf("%d\n", lcm(a, b));
+    return (0);
+}
+```
