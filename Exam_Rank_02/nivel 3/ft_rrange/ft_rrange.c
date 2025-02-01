@@ -15,7 +15,7 @@ int     *ft_rrange(int start, int end)
     
     length = 0;
     i = 0;
-    length = ft_abs(start - end);
+    length = ft_abs(start - end);    // absolute numbers
     if (!(range = (int *)malloc(sizeof(int) * length + 1)))
         return (NULL);
     if (end < start)
