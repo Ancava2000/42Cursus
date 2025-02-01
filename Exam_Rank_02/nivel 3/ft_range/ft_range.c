@@ -14,7 +14,7 @@ int     *ft_range(int start, int end)
     int i;
     
     i = 0;
-    length = ft_abs(end - start);
+    length = ft_abs(end - start);   //absolute numbers
     range = (int *)malloc(sizeof(int) * length + 1);
     if (start < end)
     {
