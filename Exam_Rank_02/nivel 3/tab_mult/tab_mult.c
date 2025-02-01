@@ -25,11 +25,11 @@ void ft_mult(int n)
     i = 1;
     while (i < 10)
     {
-        putstr(i);
+        putstr(i);    // convert int to char
         write(1, " x ", 3);
         putstr(n);
         write(1, " = ", 3);
-        putstr(i * n);
+        putstr(i * n);   // multiplication with both numbers in int
         write (1, "\n", 1);
         i++;
     }
@@ -38,7 +38,7 @@ void ft_mult(int n)
 int main(int argc, char **argv)
 {
     if (argc == 2)
-        ft_mult(ft_atoi(argv[1]));
+        ft_mult(ft_atoi(argv[1])); // first convert to int to do the multiplication
     else
         write (1, "\n", 1);
     return (0);
