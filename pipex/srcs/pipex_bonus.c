@@ -19,8 +19,8 @@ void	child(char **argv, int *fd, char **envp)
 
   if (pipe(fd) == -1)
 	error();
-	pid = fork();
-	if (pid == -1)
+pid = fork();
+if (pid == -1)
 	error();
   if (pid == 0)
   {
