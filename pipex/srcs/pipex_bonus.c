@@ -18,10 +18,10 @@ void	child(char **argv, int *fd, char **envp)
   pid_t  pid;
 
   if (pipe(fd) == -1)
-			error();
+	error();
 	pid = fork();
 	if (pid == -1)
-			error();
+	error();
   if (pid == 0)
   {
       close(fd[0]);
@@ -45,10 +45,10 @@ void  here_doc(char *delimiter, int argc)
   if (argc < 6)
       ft_bad_argument();
   if (pipe(fd) == -1)
-			error();
+	error();
 	here = fork();
 	if (pid == -1)
-			error();
+	error();
   if (pid == 0)
   {
       close(fd[0]);
