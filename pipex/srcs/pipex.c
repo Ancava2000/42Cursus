@@ -18,7 +18,10 @@ void	child(char **argv, int *fd, char **envp)
 
 	filein = open(argv[1], O_RDONLY);
 	if (filein == -1)
-		error();
+	{
+		perror("\033[31mError opening filein\n");
+		exit(EXIT_FAILURE);
+	}
 	dup2(filein, 0);
 	dup2(fd[1], 1);
 	close(fd[0]);
@@ -32,7 +35,10 @@ void	parent(char **argv, int *fd, char **envp)
 
 	fileout = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0777);
 	if (fileout == -1)
-		error();
+	{
+		perror("\033[31mError opening filout\n");
+		exit(EXIT_FAILURE);
+	}
 	dup2(fileout, 1);
 	dup2(fd[0], 0);
 	close(fd[1]);
