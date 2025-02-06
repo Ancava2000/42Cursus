@@ -13,13 +13,6 @@
 #ifndef PIPEX_H
 # define PIPEX_H
 
-// COLORS
-# define RED "\033[1;91m" 
-# define CYAN "\033[1;96m"
-# define BLUE "\033[0;34m" 
-# define PINK "\e[95m"
-# define RESET "\033[0m"
-
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
