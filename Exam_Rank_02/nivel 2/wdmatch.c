@@ -9,7 +9,7 @@ int main (int argc, char **argv)
     j = 0;
     if (argc == 3)
     {
-        while (argv[2][i])
+        while (argv[2][j])
         {
             if (argv[1][i] == argv[2][j])
                 i++;
