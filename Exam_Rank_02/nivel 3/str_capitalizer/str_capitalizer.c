@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-void ft_split(char *s1)
+void ft_cap(char *s1)
 {
     int i;
     
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
         int i = 1;
         while(i < argc)
         {
-            ft_split(argv[i]);
+            ft_cap(argv[i]);
             write (1, "\n", 1);
             i++;
         }
