@@ -36,27 +36,37 @@ void	child(char *argv, char **envp)
 	}
 }
 
+void process_lines(int here, int *fd, char *delimiter)
+{
+    	char *line;
+	
+	close(fd[0]);
+        while (get_next_line(&line)) 
+        {
+            if (ft_strncmp(line, delimiter, ft_strlen(delimiter)) == 0) 
+            {
+                free(line);
+                exit(EXIT_SUCCESS); 
+            }
+            write(fd[1], line, ft_strlen(line));  
+        }
+    }
+}
+
 void	here_doc(char *delimiter)
 {
 	int		fd[2];
 	pid_t	here;
-	char	*line;
 
+	if (argc < 6)
+		error(1);
 	if (pipe(fd) == -1)
 		error(0);
 	here = fork();
 	if (here == -1)
 		error(0);
 	if (here == 0)
-	{
-		close(fd[0]);
-		while (get_next_line(&line))
-		{
-			if (ft_strncmp(line, delimiter, ft_strlen(delimiter) == 0))
-				exit(EXIT_SUCCESS);
-			write(fd[1], line, ft_strlen(line));
-		}
-	}
+		process_line(here, fd, delimiter);
 	else
 	{
 		close(fd[1]);
@@ -74,8 +84,6 @@ int	main(int argc, char **argv, char **envp)
 	{
 		if (ft_strncmp (argv[1], "here_doc", 8) == 0)
 		{
-			if (argc < 6)
-				error(1);
 			i = 3;
 			fileout = open(argv[argc - 1], O_CREAT | O_WRONLY | O_APPEND, 0777);
 			here_doc(argv[2]);
