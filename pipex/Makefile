@@ -39,35 +39,40 @@ CFLAGS 	= -Wall -Wextra -Werror -g
 all: 		${PROG}
 
 ${PROG}:	${OBJS}
-					@echo "\033[33m----Compiling lib----"
+					@echo "$(HOT_PINK)$(BOLD) Compiling libft...$(DEF_COLOR)"
 					@make re -C ./libft
 					@$(CC) ${OBJS} -Llibft -lft -o ${PROG}
-					@echo "\033[32mPipex Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
+					@echo "$(CYAN_2)$(ITALIC) $(NAME) created ✓$(DEF_COLOR)"
+					@echo "$(CYAN_2)$(ITALIC) $(NAME) indexed ✓$(DEF_COLOR)$(DEF_COLOR)"ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 bonus:		${PROG_BONUS}
 
 ${PROG_BONUS}:	${OBJS_B}
-					@echo "\033[33m----Compiling lib----"
+					@echo "$(HOT_PINK)$(BOLD) Compiling libft...$(DEF_COLOR)"
 					@make re -C ./libft
 					@$(CC) ${OBJS_B} -Llibft -lft -o ${PROG_BONUS}
-					@echo "\033[32mPipex Bonus Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
+					@echo "$(CYAN_2)$(ITALIC) Bonus created ✓$(DEF_COLOR)"
+					@echo "$(CYAN_2)$(ITALIC) Bonus indexed ✓$(DEF_COLOR)"ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 # -------
 
 # Clean
 # -------
 clean:
+					@echo "$(DARK_CYAN)$(BOLD) Removing objs...$(DEF_COLOR)"
 					@make clean -C ./libft
 					@rm -f ${OBJS} ${OBJS_B}
 
 fclean: 	clean
+					@echo "$(DARK_CYAN)$(BOLD) Removing .o and .a in libft...$(DEF_COLOR)"
 					@make fclean -C ./libft
+					@echo "$(DARK_CYAN)$(BOLD) Removing .a...$(DEF_COLOR)"
 					@rm -f $(NAME)
 					@rm -f ${PROG}
 					@echo "\n\033[31mDeleting EVERYTHING! ⌐(ಠ۾ಠ)¬\n"
 
 re:			fclean all
 
-re_bonus:	fclean bonus
+re_bonus:		fclean bonus
 # -------
 
 party:
