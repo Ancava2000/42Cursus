@@ -1,3 +1,18 @@
+# Colors
+# ------
+ITALIC =		\033[3m
+BOLD =			\033[1m
+DEF_COLOR =		\033[0;39m
+CYAN_2 =        \033[38;5;50m
+DARK_CYAN =     \033[38;5;36m
+DARK_GREEN =    \033[38;5;22m
+HOT_PINK =      \033[38;5;169m
+LIGHT_PINK =    \033[38;5;218m
+VIOLET =        \033[38;5;134m
+# ------
+
+# Sources
+# -------
 PROG		= pipex
 PROG_BONUS	= pipex_bonus
 
@@ -9,7 +24,10 @@ OBJS_B 	= ${SRCS_B:.c=.o}
 
 MAIN	= srcs/pipex.c
 MAIN_B	= src/pipex_bonux.c
+# -------
 
+# Compilation
+# -------
 HEADER	= -Iincludes
 
 CC 		= gcc
@@ -33,7 +51,10 @@ ${PROG_BONUS}:	${OBJS_B}
 					@make re -C ./libft
 					@$(CC) ${OBJS_B} -Llibft -lft -o ${PROG_BONUS}
 					@echo "\033[32mPipex Bonus Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
+# -------
 
+# Clean
+# -------
 clean:
 					@make clean -C ./libft
 					@rm -f ${OBJS} ${OBJS_B}
@@ -47,6 +68,7 @@ fclean: 	clean
 re:			fclean all
 
 re_bonus:	fclean bonus
+# -------
 
 party:
 					@printf "\033c"
