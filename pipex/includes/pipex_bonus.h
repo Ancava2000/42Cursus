@@ -25,6 +25,6 @@
 void	error(int i);
 char	*find_path(char *cmd, char **envp);
 void	execute(char *argv, char **envp);
-int		get_next_line(char **argv);
+int  get_next_line(char **argv);
 
 #endif
