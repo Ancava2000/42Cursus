@@ -1,8 +1,14 @@
-PROG	= pipex
+PROG		= pipex
+PROG_BONUS	= pipex_bonus
 
 SRCS 	= srcs/pipex.c srcs/utils.c
+SRCS_B	= srcs/pipex_bonus.c srcs/utils_bonus.c
+
 OBJS 	= ${SRCS:.c=.o}
+OBJS_B 	= ${SRCS_B:.c=.o}
+
 MAIN	= srcs/pipex.c
+MAIN_B	= src/pipex_bonux.c
 
 HEADER	= -Iincludes
 
@@ -20,10 +26,17 @@ ${PROG}:	${OBJS}
 					@$(CC) ${OBJS} -Llibft -lft -o ${PROG}
 					@echo "\033[32mPipex Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
+bonus:		${PROG_BONUS}
+
+${PROG_BONUS}:	${OBJS_B}
+					@echo "\033[33m----Compiling lib----"
+					@make re -C ./libft
+					@$(CC) ${OBJS_B} -Llibft -lft -o ${PROG_BONUS}
+					@echo "\033[32mPipex Bonus Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
 
 clean:
 					@make clean -C ./libft
-					@rm -f ${OBJS}
+					@rm -f ${OBJS} ${OBJS_B}
 
 fclean: 	clean
 					@make fclean -C ./libft
@@ -48,4 +61,4 @@ party:
 					@printf "\033c"
 					@echo "\033[34m♪┗(・o･)┓♪\n"
 
-.PHONY: all clean fclean re party
+.PHONY: all clean fclean re re_bonus bonus party
