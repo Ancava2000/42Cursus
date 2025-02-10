@@ -50,7 +50,6 @@ void process_lines(int here, int *fd, char *delimiter)
             }
             write(fd[1], line, ft_strlen(line));  
         }
-    }
 }
 
 void	here_doc(char *delimiter)
