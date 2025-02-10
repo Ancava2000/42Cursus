@@ -71,3 +71,29 @@ void	execute(char *argv, char **envp)
 	if (execve (path, command, envp) == -1)
 		error(0);
 }
+
+int	get_next_line(const char **line)
+{
+	char	*buffer;
+	int	nb;
+	int	count;
+	char	c;
+
+	nb = 0;
+	count = 0;
+	buffer = malloc(sizeof(char) * 100000);
+	if (!buffer)
+		return (-1);
+	nb = read(0, &c, 1);
+	while (nb && c != '\n' && c != '\0')
+	{
+		if (c != '\n' && c != '\0')
+			buffer[count] = c;
+		count++;
+		nb = read (0, &c, 1);
+	}
+	buffer[count] = '\n';
+	buffer[count++] = '\0';
+	*line = buffer;
+	free((buffer);
+	return (nb);
