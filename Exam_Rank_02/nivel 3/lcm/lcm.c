@@ -1,6 +1,6 @@
 unsigned int    lcm(unsigned int a, unsigned int b)
 {
-    unsigned n;
+    unsigned int n;
     
     if (a > b)
         n = a;
