@@ -28,7 +28,7 @@ int	isprime(int nb)
 
 	if (nb <= 1)
 		return (0);
-	while (i * i <= nb)   // remember the =
+	while (i * 2 <= nb)   // remember the =
 	{
 		if (nb % i == 0)
 			return (0);
