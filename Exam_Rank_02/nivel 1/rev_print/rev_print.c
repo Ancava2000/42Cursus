@@ -9,18 +9,18 @@
 /*   Updated: 2025/01/16 12:14:44 by acarro-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
-char *rev_print(char *str)
+int main(int argc, char **argv)
 {
-	int	i;
+	int i = 0;
 
-	i = 0;
-	while (str[i])
-		i++;
-	while (i--)
-		write (1, &str[i], 1);
+	if (argc == 2)
+	{
+		while (argv[1][i])
+			i++;
+		while (i--)
+			write (1, &argv[1][i], 1);
+	}
 	write (1, "\n", 1);
-	return (str);
 }
