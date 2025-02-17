@@ -12,12 +12,20 @@
 
 #include <unistd.h>
 
-int main(int argc, char **argv)
+int ft_strlen(char *str)
 {
-	int	i;
+	int count = 0;
 
-	i = 0;
-	if (argc == 4)
+	while (str[count])
+		count++;
+	return (count);
+}
+
+int main (int argc, char **argv)
+{
+	int i = 0;
+
+	if (argc == 4 && (ft_strlen(argv[2]) == 1 && ft_strlen(argv[3]) == 1))
 	{
 		while (argv[1][i])
 		{
