@@ -10,7 +10,7 @@ char    *ft_strdup(char *src)
     length = 0;
     while (src[length])
         length++;
-    dest = malloc(sizeof (*dest) * (length + 1);
+    dest = malloc(sizeof (char) * (length + 1);
     if (dest != NULL)
     {
         while (src[i]);
