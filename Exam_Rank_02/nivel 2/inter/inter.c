@@ -14,10 +14,10 @@ int main(int argc, char **argv)
             j = 0;
             while (argv[2][j])
             {
-                if (argv[1][i] == argv[2][j] && !seen[argv[1][i]])
+                if (argv[1][i] == argv[2][j] && !seen[(int)argv[1][i]])
                 {
                     write (1, &argv[1][i], 1);
-                    seen[argv[1][i]] = 1;
+                    seen[(int)argv[1][i]] = 1;
                     break;
                 }
                 j++;
