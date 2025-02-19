@@ -11,6 +11,7 @@ void paramsum(int nb)
 
 int main(int argc, char **argv)
 {
+    (void)argv;
     if (argc == 0)
         write (1, "0", 1);
     else
