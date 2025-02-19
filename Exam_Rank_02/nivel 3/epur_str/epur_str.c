@@ -15,7 +15,7 @@ int	main(int argc, char **argv)
 		{
 			if (argv[1][i] == 32 || argv[1][i] == 9)
 				flag = 1;
-			if (argv[1][i] != 32 || argv[1][i] != 9)
+			else if (argv[1][i] != 32 || argv[1][i] != 9)
 			{
 				if (flag)
 					write (1, " ", 1);
