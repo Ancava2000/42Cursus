@@ -1,66 +1,47 @@
 #include <stdlib.h>
 
-int	ft_strlen(const char *s)
-{
-	int i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i;
-}
-
-char	*ft_strrev(char *str)
-{
-	int i;
-	int j;
-	int tmp;
-
-	i = 0;
-	j = ft_strlen(str);
-	while (j > i)
-	{
-		j--;
-		tmp = str[i];
-		str[i] = str[j];
-		str[j] = tmp;
-		i++;
-	}
-	return (str);
-}
-
 char	*ft_itoa(int nbr)
 {
-	int i;
-	int neg;
-	char *str;
+    int len;
+    int temp;
+    int is_negative = 0;
 
-	i = 0;
-	neg = 0;
-	str = malloc(sizeof(char) * 12);  // *12; 10: The maximum number of digits for a 32-bit signed integer + 1 (NULL) + 1 (negative '-')
-	if (str == NULL || nbr == 0)
-	{
-		if (nbr == 0)
-		    return ("0");   // for the case of 0
-		else
-		    return (NULL);
-	}
-	if (nbr == -2147483648)
-		return ("-2147483648");
-	if (nbr < 0)
-	{
-		neg = 1;
-		nbr *= -1;  // to make it positive
-	}
-	while (nbr)
-	{
-		str[i++] = (nbr % 10) + '0';  // to convert to str
-		nbr /= 10;
-	}
-	if (neg)
-		str[i] = '-';  // writes the sign at the end
-	return (ft_strrev(str)); // the digits are stores in reverse order. (-1234 -> 4321-)
+    if (nbr == -2147483648)
+        return ("-2147483648");
+    if (nbr < 0)
+    {
+        is_negative = 1;
+        nbr = -nbr;
+    }
+    temp = nbr;
+	len = 0;
+    while (temp != 0)
+    {
+        temp /= 10;
+        len++;
+    }
+    len += is_negative;
+    char *str = (char *)malloc(len + 1);
+    if (!str)
+        return (NULL);
+    str[len] = '\0';
+    if (nbr == 0)
+    {
+        str[0] = '0';
+        return (str);
+    }
+	len -= 1;
+    while (nbr > 0)
+    {
+        str[len] = (nbr % 10) + '0';
+        nbr /= 10;
+		len--;
+    }
+    if (is_negative)
+        str[0] = '-';
+    return (str);
 }
+
 
 /*
 #include <stdio.h>
