@@ -2,11 +2,13 @@
 
 void    ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-    while(begin_list != NULL)        // remember != NULL!!
+    t_list *pnt;
+
+    pnt = begin_list;
+    while(pnt)
     {
-        if (begin_list -> data)
-            (*f)(begin_list -> data);
-        begin_list = begin_list -> next;
+        (*f)(pnt -> data);
+        pnt = pnt -> next;
     }
 }
 
