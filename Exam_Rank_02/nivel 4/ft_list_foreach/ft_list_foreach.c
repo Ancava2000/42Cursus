@@ -14,6 +14,7 @@ void    ft_list_foreach(t_list *begin_list, void (*f)(void *))
 
 /*
 #include <unistd.h>
+#include <stdlib.h>
 
 void ft_putstr(char *str)
 {
