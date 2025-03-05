@@ -21,7 +21,7 @@ int ft_putstr(char *str)
 	return (count);
 }
 
-int ft_putnbr(long int nb, int base)
+int ft_putnbr(unsigned int nb, int base)
 {
 	char *str = "0123456789abcdef";
 	int count = 0;
@@ -46,7 +46,7 @@ int ft_print_d (int nb)
 		}
 		nb = -nb;
 	}
-	count += ft_putnbr(nb, 10);
+	count += ft_putnbr((unsigned int)nb, 10);
 	return (count);
 }
 
@@ -71,7 +71,7 @@ int ft_printf(char *str, ...)
 			else if (str[i] == 's')
 				count += ft_putstr(va_arg(av, char *));
 			else if (str[i] == 'x')
-				count += ft_putnbr(va_arg(av, long int), 16);
+				count += ft_putnbr(va_arg(av, unsigned int), 16);
 			else
 				count += write (1, &str[i], 1);
 		}
