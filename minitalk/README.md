@@ -10,7 +10,6 @@
    - [Bits](Bits)
 3. [Structure](#Struct)
 4. [Usage](#Us)
-5. [Resources](#Res)
 ***
 
 <a id="About"></a>
@@ -110,5 +109,5 @@ In another terminal, run the client followed by the PID and the message. Once se
 ./client 1234 "Hello world!"
 ```
 
-<a id="Res"></a>
-## Resources 📹
+Thanks for watching my minitalk project!! <sub>I'll appreciate every comment or message about it 🚀</sub>
+![Alt text](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmIzd2Y1cDZzaWNicXg5d2IyeWtmZGJmaHFydXZkMmNudmtuNHhnMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/WySK0nQiJKLy25HLhp/giphy.gif)
