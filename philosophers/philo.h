@@ -68,7 +68,6 @@ struct	s_table
 	long	time_to_eat;
 	long	start_time;
 	t_mtx	lock_write;
-	t_mtx	lock_check;
 	t_mtx	lock_eat;
 	t_mtx	lock_dead;
 	t_philo	*philos;
