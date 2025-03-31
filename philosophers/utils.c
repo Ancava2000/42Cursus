@@ -12,13 +12,21 @@
 
 #include "philo.h"
 
-void	messages(t_philo *philo, char *str)
+void	messages(int nb, t_philo *philo, char *str)
 {
 	long long time;
 
 	pthread_mutex_lock(&philo->table->lock_write);
 	time = current_time() - philo -> table -> start_time;
-	if (!status_dead(philo, 0))
+	if (nb == 1)
+		printf("%llu %d %s\n", time, philo-> philo_id, str);
+	else if (nb == 1)
+		printf("%llu %d %s\n", time, philo-> philo_id, str);
+	else if (nb == 2)
+		printf("%llu %d %s\n", time, philo-> philo_id, str);
+	else if (nb == 3)
+		printf("%llu %d %s\n", time, philo-> philo_id, str);
+	else if (nb == 4)
 		printf("%llu %d %s\n", time, philo-> philo_id, str);
 	pthread_mutex_unlock(&philo->table->lock_write);
 }
