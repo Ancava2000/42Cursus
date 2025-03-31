@@ -16,6 +16,7 @@ void init_philo(t_table *table)
 {
     int i;
 
+    table -> start_time = current_time();
     i = -1;
     while(++i < table -> nb_philos)
     {
