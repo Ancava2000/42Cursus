@@ -67,4 +67,8 @@ void    parse_av(t_table *table, char **av)
     table -> time_to_die = ft_atoi2(av[2]) * 1000;
     table -> time_to_sleep = ft_atoi2(av[3]) * 1000;
     table -> time_to_eat = ft_atoi2(av[4]) * 1000;
+    if (av[5])
+        table -> nb_meals = ft_atoi2(av[5]);
+    else
+        table -> nb_meals = -1;
 }
