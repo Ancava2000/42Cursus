@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 	{
 		parse_av(&table, av);
 		init_data(&table);
-		//launcher(&table);
+		launcher(&table);
 		ft_clean(&table);
 	}
 	else
