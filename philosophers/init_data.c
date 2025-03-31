@@ -22,6 +22,7 @@ void init_philo(t_table *table)
     {
         table -> philos[i].philo_id = i + 1;
         table -> philos[i].has_eaten = 0;
+        table -> philos[i].nb_meals = 0;
         table -> philos[i].table = table; 
         if (table -> philos[i].philo_id % 2 == 0)
         {
