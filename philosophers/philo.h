@@ -67,7 +67,6 @@ struct	s_table
 	long	time_to_sleep;
 	long	time_to_eat;
 	long	start_time;
-	long	death_time;
 	t_mtx	lock_write;
 	t_philo	*philos;
 	t_fork	*forks;
