@@ -12,6 +12,29 @@
 
 #include "philo.h"
 
+void init_threads(t_table *table)
+{
+    int i;
+    
+    i = -1;
+    if (table -> nb_philos == 1)
+    ft_one_case(&table);
+    else
+    {
+        while (++i < table -> nb_philos)
+        {
+            if (phtread_create(&table -> philos[i].thread_id, NULL, &philo_routine,  &table -> philos[i]) != 0)
+                ft_error("Error creating thread");
+        }
+        i = -1
+        while (++i < table -> nb_philos)
+        {
+            if (phtread_join(table -> philos[i].thread_id, NULL) != 0)
+                ft_error("Error joining threads");
+        }
+    }
+}
+
 void init_philo(t_table *table)
 {
     int i;
@@ -35,6 +58,7 @@ void init_philo(t_table *table)
             table -> philos[i].left_fork = &table -> forks[i];
         }
     }
+    init_threads(&table);
 }
 
 void init_data(t_table *table)
@@ -45,6 +69,9 @@ void init_data(t_table *table)
     table -> start_time = 0;
     table -> dead = 0;
     pthread_mutex_init(&table -> lock_write, NULL);
+    pthread_mutex_init(&table -> lock_check, NULL);
+    pthread_mutex_init(&table -> lock_dead, NULL);
+    pthread_mutex_init(&table -> lock_eat, NULL);
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
     {
