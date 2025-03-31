@@ -27,7 +27,7 @@ void	ft_clean(t_table *table)
 	free(table -> forks);
 	pthread_mutex_destroy(&table -> lock_write);
 	pthread_mutex_destroy(&table -> lock_eat);
-	pthread_mutex_destroy(&table -> lock_status_simulation);
+	pthread_mutex_destroy(&table -> lock_simulation);
 }
 
 int	main(int ac, char **av)
