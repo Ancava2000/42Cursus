@@ -43,9 +43,10 @@ void init_philo(t_table *table)
     i = -1;
     while(++i < table -> nb_philos)
     {
+        pthread_mutex_init(&table -> philos[i].lock_philo, NULL);
         table -> philos[i].philo_id = i + 1;
-        table -> philos[i].has_eaten = 0;
-        table -> philos[i].nb_meals = 0;
+        table -> philos[i].full = 0;
+        table -> philos[i].meals_counter = 0;
         table -> philos[i].table = table; 
         if (table -> philos[i].philo_id % 2 == 0)
         {
@@ -67,9 +68,8 @@ void init_data(t_table *table)
 
     i = -1;
     table -> start_time = 0;
-    table -> dead = 0;
+    table -> threads_ready = 0;
     pthread_mutex_init(&table -> lock_write, NULL);
-    pthread_mutex_init(&table -> lock_dead, NULL);
     pthread_mutex_init(&table -> lock_eat, NULL);
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
