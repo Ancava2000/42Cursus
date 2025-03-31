@@ -12,18 +12,20 @@
 
 #include "philo.h"
 
-void	ft_clean(t_table *table)
+void	messages(int i, t_philo *philo)
 {
-	int i;
-
-	i = -1;
-	while (++i < table -> nb_philos)
-	{
-		pthread_mutex_destroy(&table -> philos[i].left_fork);
-		pthread_mutex_destroy(&table -> philos[i].right_fork);
-	}
-	free(table -> philos);
-	free(table -> forks);
+	if (i == 1)
+		printf(BLUE"%d has taken the left fork\n"RESET, philo -> philo_id);
+	else if (i == 2)
+		printf(BLUE "%d has taken the right fork\n"RESET, philo -> philo_id);
+	else if (i == 3)
+		printf(%d "is eaten", philo -> philo_id);
+	else if (i == 4)
+		printf(%d "is sleeping", philo -> philo_id);
+	else if (i == 5)
+		printf(%d "is thinking", philo -> philo_id);
+	else if (i == 6)
+		printf(%d "died", philo -> philo_id);
 }
 void	ft_error(const char *str)
 {
