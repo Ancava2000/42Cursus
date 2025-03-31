@@ -41,9 +41,9 @@ void init_data(t_table *table)
     int i;
 
     i = -1;
-    table -> end_time = 0;
     table -> start_time = 0;
-    table -> 
+    table -> dead = 0;
+    pthread_mutex_init(&table -> lock_write, NULL);
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
     {
