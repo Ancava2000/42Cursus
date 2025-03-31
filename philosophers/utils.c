@@ -12,21 +12,22 @@
 
 #include "philo.h"
 
-void	messages(int i, t_philo *philo)
+void	messages(int i, t_philo *philo, char *str)
 {
-	if (i == 1)
-		printf(BLUE"%d has taken the left fork\n"RESET, philo -> philo_id);
-	else if (i == 2)
-		printf(BLUE "%d has taken the right fork\n"RESET, philo -> philo_id);
-	else if (i == 3)
-		printf(%d "is eaten", philo -> philo_id);
-	else if (i == 4)
-		printf(%d "is sleeping", philo -> philo_id);
-	else if (i == 5)
-		printf(%d "is thinking", philo -> philo_id);
-	else if (i == 6)
-		printf(%d "died", philo -> philo_id);
+	long long time;
+
+	pthread_mutex_lock(&philo->table->lock_write);
+	time = current_time() - philo -> table -> start_time;
+	if (i == 6 && philo -> table -> dead == 0)
+	{
+		printf("%llu %d %s\n", time, philo-> philo_id, str);
+		philo -> table -> dead = 1;
+	}
+	if (!philo -> table -> dead)
+		printf("%llu %d %s\n", time, philo-> philo_id, str);
+	pthread_mutex_unlock(&philo->table->lock_write);
 }
+
 void	ft_error(const char *str)
 {
 	printf(RED"%s\n"RESET, str);
