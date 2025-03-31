@@ -21,10 +21,13 @@ void	ft_clean(t_table *table)
 	{
 		pthread_mutex_destroy(&table -> philos[i].left_fork);
 		pthread_mutex_destroy(&table -> philos[i].right_fork);
+		pthread_mutex_destroy(&table -> philos[i].lock_philo);
 	}
 	free(table -> philos);
 	free(table -> forks);
 	pthread_mutex_destroy(&table -> lock_write);
+	pthread_mutex_destroy(&table -> lock_eat);
+	pthread_mutex_destroy(&table -> lock_status_simulation);
 }
 
 int	main(int ac, char **av)
