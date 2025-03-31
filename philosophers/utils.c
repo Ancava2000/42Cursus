@@ -12,18 +12,29 @@
 
 #include "philo.h"
 
-void	messages(int i, t_philo *philo, char *str)
+int	check_dead(t_philo *philo, int nb)
+{
+	int i;
+
+	pthread_mutex_lock(&philo->table->lock_dead);
+	i = 0;
+	if (nb)
+		i = 1;
+	if (i)
+	{
+		pthread_mutex_unlock(&philo->table->lock_dead);
+		return (1);
+	}
+	pthread_mutex_unlock(&philo->table->lock_dead);
+	return (0);
+}
+void	messages(t_philo *philo, char *str)
 {
 	long long time;
 
 	pthread_mutex_lock(&philo->table->lock_write);
 	time = current_time() - philo -> table -> start_time;
-	if (i == 6 && philo -> table -> dead == 0)
-	{
-		printf("%llu %d %s\n", time, philo-> philo_id, str);
-		philo -> table -> dead = 1;
-	}
-	if (!philo -> table -> dead)
+	if (!check_dead(philo, 0))
 		printf("%llu %d %s\n", time, philo-> philo_id, str);
 	pthread_mutex_unlock(&philo->table->lock_write);
 }
