@@ -21,6 +21,7 @@ void init_philo(t_table *table)
     {
         table -> philos[i].philo_id = i + 1;
         table -> philos[i].has_eaten = 0;
+        table -> philos[i].table = table; 
         if (table -> philos[i].philo_id % 2 == 0)
         {
             table -> philos[i].right_fork = &table -> forks[i];
@@ -41,6 +42,7 @@ void init_data(t_table *table)
     i = -1;
     table -> end_time = 0;
     table -> start_time = 0;
+    
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
     {
