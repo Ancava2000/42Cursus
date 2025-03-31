@@ -12,22 +12,6 @@
 
 #include "philo.h"
 
-int	status_dead(t_philo *philo, int nb)
-{
-	int i;
-
-	pthread_mutex_lock(&philo->table->lock_dead);
-	i = 0;
-	if (nb)
-		i = 1;
-	if (i)
-	{
-		pthread_mutex_unlock(&philo->table->lock_dead);
-		return (1);
-	}
-	pthread_mutex_unlock(&philo->table->lock_dead);
-	return (0);
-}
 void	messages(t_philo *philo, char *str)
 {
 	long long time;
