@@ -40,18 +40,11 @@ void ft_error_2(void)
 	printf(BLUE"3. Time To Eat (in milliseconds)\n"RESET);
 	printf(BLUE"(optional) 5. Nb of meals\n"RESET);
 }
-/*
-void message(int i)
+
+long long	current_time(void)
 {
-	if (i == 1)
-	{
-		printf()
-		exit(EXIT_SUCCESS);
-	}
-	else if (1 == 2)
-	else if (1 == 3)
-	else if (1 == 4)
-	else if (1 == 5)
-	else if (1 == 6)
+	struct timeval tv;
+
+	gettimeofday(&tv, NULL);
+	return(tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
-*/
