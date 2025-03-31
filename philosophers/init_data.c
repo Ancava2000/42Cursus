@@ -18,7 +18,7 @@ void init_threads(t_table *table)
     
     i = -1;
     if (table -> nb_philos == 1)
-    ft_one_case(&table);
+        ft_one_case(&table);
     else
     {
         while (++i < table -> nb_philos)
@@ -26,12 +26,14 @@ void init_threads(t_table *table)
             if (phtread_create(&table -> philos[i].thread_id, NULL, &philo_routine,  &table -> philos[i]) != 0)
                 ft_error("Error creating thread");
         }
-        i = -1
-        while (++i < table -> nb_philos)
-        {
-            if (phtread_join(table -> philos[i].thread_id, NULL) != 0)
+    }
+    table -> start_time = current_time();
+    table -> threads_ready = 1;
+    i = -1
+    while (++i < table -> nb_philos)
+    {
+        if (phtread_join(table -> philos[i].thread_id, NULL) != 0)
                 ft_error("Error joining threads");
-        }
     }
 }
 
@@ -39,7 +41,6 @@ void init_philo(t_table *table)
 {
     int i;
 
-    table -> start_time = current_time();
     i = -1;
     while(++i < table -> nb_philos)
     {
