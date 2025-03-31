@@ -12,6 +12,8 @@
 
 #include "philo.h"
 
+void    ft_one_case(t_table *table)
+
 void init_threads(t_table *table)
 {
     int i;
@@ -71,7 +73,7 @@ void init_data(t_table *table)
     table -> start_time = 0;
     table -> threads_ready = 0;
     pthread_mutex_init(&table -> lock_write, NULL);
-    pthread_mutex_init(&table -> lock_eat, NULL);
+    pthread_mutex_init(&table -> lock_status_simulation, NULL);
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
     {
