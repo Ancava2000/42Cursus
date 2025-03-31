@@ -70,6 +70,7 @@ struct	s_table
 	long	time_to_eat;
 	long	start_time;
 	int	threads_ready;
+	int	end_dinner;
 	t_mtx	lock_write;
 	t_mtx	lock_eat;
 	t_mtx	lock_simulation;
