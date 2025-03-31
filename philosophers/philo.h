@@ -63,11 +63,13 @@ struct	s_table
 {
 	int	dead; 
 	long	nb_philos;
+	long	nb_meals;
 	long	time_to_die;
 	long	time_to_sleep;
 	long	time_to_eat;
 	long	start_time;
 	t_mtx	lock_write;
+	t_mtx	lock_check;
 	t_philo	*philos;
 	t_fork	*forks;
 };
