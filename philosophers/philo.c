@@ -24,6 +24,7 @@ void	ft_clean(t_table *table)
 	}
 	free(table -> philos);
 	free(table -> forks);
+	pthread_mutex_destroy(&table -> lock_write);
 }
 
 int	main(int ac, char **av)
