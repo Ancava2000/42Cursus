@@ -49,10 +49,12 @@ typedef struct s_fork
 typedef struct s_philo
 {
 	int			philo_id;
-	int			has_eaten;
+	int			full;
 	long		last_eaten;
+	int		meals_counter;
 	t_fork		*right_fork;
 	t_fork		*left_fork;
+	t_mtx		lock_philo;
 	pthread_t	thread_id; //every philo is a thread
 	t_table		*table; //every philo has access to all the global values
 }	t_philo;
@@ -69,7 +71,6 @@ struct	s_table
 	long	start_time;
 	t_mtx	lock_write;
 	t_mtx	lock_eat;
-	t_mtx	lock_dead;
 	t_philo	*philos;
 	t_fork	*forks;
 };
