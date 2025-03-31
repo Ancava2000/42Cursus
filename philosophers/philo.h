@@ -61,7 +61,6 @@ typedef struct s_philo
 // ./philo 5 800 200 200
 struct	s_table
 {
-	int	dead; 
 	long	nb_philos;
 	long	nb_meals;
 	long	time_to_die;
@@ -70,6 +69,8 @@ struct	s_table
 	long	start_time;
 	t_mtx	lock_write;
 	t_mtx	lock_check;
+	t_mtx	lock_eat;
+	t_mtx	lock_dead;
 	t_philo	*philos;
 	t_fork	*forks;
 };
