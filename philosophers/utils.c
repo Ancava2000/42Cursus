@@ -12,7 +12,7 @@
 
 #include "philo.h"
 
-int	check_dead(t_philo *philo, int nb)
+int	status_dead(t_philo *philo, int nb)
 {
 	int i;
 
@@ -34,7 +34,7 @@ void	messages(t_philo *philo, char *str)
 
 	pthread_mutex_lock(&philo->table->lock_write);
 	time = current_time() - philo -> table -> start_time;
-	if (!check_dead(philo, 0))
+	if (!status_dead(philo, 0))
 		printf("%llu %d %s\n", time, philo-> philo_id, str);
 	pthread_mutex_unlock(&philo->table->lock_write);
 }
