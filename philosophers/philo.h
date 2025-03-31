@@ -54,7 +54,7 @@ typedef struct s_philo
 	t_fork		*right_fork;
 	t_fork		*left_fork;
 	pthread_t	thread_id; //every philo is a thread
-	//t_table		*table; //every philo has access to all the global values
+	t_table		*table; //every philo has access to all the global values
 }	t_philo;
 
 // ALL DATA
@@ -67,6 +67,7 @@ struct	s_table
 	long	time_to_eat;
 	long	start_time;
 	long	end_time;
+	t_mtx	
 	t_philo	*philos;
 	t_fork	*forks;
 };
