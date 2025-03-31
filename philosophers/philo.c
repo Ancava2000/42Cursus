@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 {
 	t_table	table;
 
-	if (ac == 5)
+	if (ac == 5 || ac == 6)
 	{
 		parse_av(&table, av);
 		init_data(&table);
