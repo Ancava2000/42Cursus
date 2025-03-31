@@ -12,6 +12,20 @@
 
 #include "philo.h"
 
+void	ft_clean(t_table *table)
+{
+	int i;
+
+	i = -1;
+	while (++i < table -> nb_philos)
+	{
+		pthread_mutex_destroy(&table -> philos[i].left_fork);
+		pthread_mutex_destroy(&table -> philos[i].right_fork);
+	}
+	free(table -> philos);
+	free(table -> forks);
+}
+
 int	main(int ac, char **av)
 {
 	t_table	table;
