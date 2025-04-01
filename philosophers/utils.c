@@ -53,7 +53,7 @@ long long	current_time(void)
 {
 	struct timeval tv;
 
-	if (gettimeofday(&tv, NULL) == -1);
+	if (gettimeofday(&tv, NULL) == -1)
 		ft_error("Error getting timestamp");
 	return(tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
