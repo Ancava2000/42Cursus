@@ -72,7 +72,6 @@ struct	s_table
 	int	threads_ready;
 	int	end_dinner;
 	t_mtx	lock_write;
-	t_mtx	lock_eat;
 	t_mtx	lock_simulation;
 	t_philo	*philos;
 	t_fork	*forks;
