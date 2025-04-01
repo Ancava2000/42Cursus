@@ -74,7 +74,6 @@ void init_data(t_table *table)
     table -> threads_ready = 0;
     table -> end_dinner = 0;
     pthread_mutex_init(&table -> lock_write, NULL);
-    pthread_mutex_init(&table -> lock_eat, NULL);
     pthread_mutex_init(&table -> lock_simulation, NULL);
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
