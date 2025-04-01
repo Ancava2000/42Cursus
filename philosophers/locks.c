@@ -3,7 +3,7 @@
 void set_value_bool(t_mtx *mutex, int *dest, int nb)
 {
     pthread_mutex_lock(mutex, NULL);
-    dest = nb;
+    *dest = nb;
     pthread_mutex_unlock(mutex, NULL);
 }
 
