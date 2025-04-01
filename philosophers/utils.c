@@ -12,22 +12,24 @@
 
 #include "philo.h"
 
-void	messages(int nb, t_philo *philo, char *str)
+void	messages(int nb, t_philo *philo)
 {
-	long long time;
+	long time;
 
-	pthread_mutex_lock(&philo->table->lock_write);
+	pthread_mutex_lock(&philo -> table -> lock_write);
 	time = current_time() - philo -> table -> start_time;
-	if (nb == 1)
-		printf("%llu %d %s\n", time, philo-> philo_id, str);
-	else if (nb == 1)
-		printf("%llu %d %s\n", time, philo-> philo_id, str);
-	else if (nb == 2)
-		printf("%llu %d %s\n", time, philo-> philo_id, str);
-	else if (nb == 3)
-		printf("%llu %d %s\n", time, philo-> philo_id, str);
-	else if (nb == 4)
-		printf("%llu %d %s\n", time, philo-> philo_id, str);
+	if (nb == 1 && !(philo -> table -> end_dinner))
+		printf("%llu %d has taken the left fork\n", time, philo-> philo_id);
+	else if (nb == 2 && !(philo -> table -> end_dinner))
+		printf("%llu %d has taken the right fork\n", time, philo-> philo_id);
+	else if (nb == 3 && !(philo -> table -> end_dinner))
+		printf("%llu %d is eating\n", time, philo-> philo_id);
+	else if (nb == 4 && !(philo -> table -> end_dinner))
+		printf("%llu %d is sleeping\n", time, philo-> philo_id);
+	else if (nb == 5 && !(philo -> table -> end_dinner))
+		printf("%llu %d is thinking\n", time, philo-> philo_id);
+	else if (nb == 6)
+		printf("%llu %d died\n", time, philo-> philo_id);
 	pthread_mutex_unlock(&philo->table->lock_write);
 }
 
@@ -51,6 +53,16 @@ long long	current_time(void)
 {
 	struct timeval tv;
 
-	gettimeofday(&tv, NULL);
+	if (gettimeofday(&tv, NULL) == -1);
+		ft_error("Error getting timestamp");
 	return(tv.tv_sec * 1000 + tv.tv_usec / 1000);
+}
+
+void	precise_usleep(long time)
+{
+	long start;
+
+	start = current_tinme();
+	while (current_time() - start < time)
+		usleep(500);
 }
