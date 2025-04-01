@@ -58,9 +58,9 @@ long long	current_time(void)
 	return(tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
-void	precise_usleep(long time)
+void	precise_usleep(long long time)
 {
-	long start;
+	long long start;
 
 	start = current_tinme();
 	while (current_time() - start < time)
