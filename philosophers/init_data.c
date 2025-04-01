@@ -30,7 +30,7 @@ void init_threads(t_table *table)
         }
     }
     table -> start_time = current_time();
-    table -> threads_ready = 1;
+    set_value_bool(&table -> lock_simulation, &table -> threads_ready, 1);
     i = -1
     while (++i < table -> nb_philos)
     {
@@ -72,7 +72,9 @@ void init_data(t_table *table)
     i = -1;
     table -> start_time = 0;
     table -> threads_ready = 0;
+    table -> end_dinner = 0;
     pthread_mutex_init(&table -> lock_write, NULL);
+    pthread_mutex_init(&table -> lock_eat, NULL);
     pthread_mutex_init(&table -> lock_simulation, NULL);
     table -> philos = malloc(sizeof(t_philo) * table -> nb_philos);
     if (!table -> philos)
