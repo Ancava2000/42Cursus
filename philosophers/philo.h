@@ -77,12 +77,17 @@ struct	s_table
 	t_fork	*forks;
 };
 
-int		main(int ac, char **av);
+int	main(int ac, char **av);
 void	parse_av(t_table *table, char **av);
 void	ft_error(const char *str);
 void	ft_error_2(void);
+void	messages(int nb, t_philo *philo);
+long long	current_time(void);
+void	precise_usleep(long long time);
 void	init_data(t_table *table);
-//void	start_simulation(t_table *table);
-//void	ft_clean(t_table *table);
+void  	*launcher(void *data);
+int  	lock_unlock_bool(t_mtx *mutex, int *value);
+void 	set_value_bool(t_mtx *mutex, long *dest, long value);
+void	ft_clean(t_table *table);
 
 #endif
