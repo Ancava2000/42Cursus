@@ -113,7 +113,11 @@ void    dinner(t_table *table, int count)
     pthread_t   monitor_id;
 
     i = -1;
-    pthread_create(&monitor_id, NULL, &monitor, table->philos);
+    if (pthread_create(&monitor_id, NULL, &monitor, table->philos) != 0)
+    {
+        ft_clean(table, count);
+        ft_error("Error creating threads", 1);
+    }
     while(++i < count)
     {
         if(pthread_create(&table->philos[i].philo_thread, NULL,
@@ -123,7 +127,11 @@ void    dinner(t_table *table, int count)
                 ft_error("Error creating threads", 1);
         }
     }
-    pthread_join(monitor_id, NULL); // we do join with the monitor threads. With this, the iteration never end until the conditions are meet.
+    if (pthread_join(monitor_id, NULL) != 0) // we do join with the monitor threads. With this, the iteration never end until the conditions are meet.
+    {
+            ft_clean(table, count);
+            ft_error("Error creating threads", 1);
+    }
     i = -1;
     while(++i < count)
     {
