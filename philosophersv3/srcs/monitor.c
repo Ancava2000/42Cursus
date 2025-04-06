@@ -41,7 +41,7 @@ void check_all_ate(t_table *table)
     int i;
     int full = 0;
 
-    if (table->nb_meals > 0)  // Solo ejecuta esto si se requiere un número de comidas específico
+    if (table->nb_meals > 0) 
     {
         i = 0;
         while (i < table->nb_philos)
@@ -67,14 +67,8 @@ void *monitor(void *data)
 
     while (!table->end_dinner)
     {
-        // Comprobar si algún filósofo ha muerto
         check_death(table);
-
-        // Comprobar si todos los filósofos han comido el número de comidas requerido
         check_all_ate(table);
-
-        usleep(100);  // Sleep 0.1ms to reduce CPU load
     }
-
     return (NULL);
 }
