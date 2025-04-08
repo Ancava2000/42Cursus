@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 15:13:28 by kali              #+#    #+#             */
-/*   Updated: 2025/04/06 17:26:00 by kali             ###   ########.fr       */
+/*   Updated: 2025/04/08 15:59:07 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,29 @@ void    eat(t_philo *philo)
     pthread_mutex_unlock(philo->second_fork);
 }
 
+void single_philosopher_case(t_philo *philo)
+{
+    pthread_mutex_lock(philo->first_fork);
+    messages(1, philo);
+    precise_usleep(philo->table->time_to_die, philo->table);
+    pthread_mutex_unlock(philo->first_fork);
+}
+
 void    *dinner(void *data)
 {
     t_philo *philo;
 
     philo = (t_philo *)data;
-
+    if (philo->table->nb_philos == 1)
+    {
+        single_philosopher_case(philo);
+        return (data);
+    }
     philo->last_eaten = get_current_time();
     while(!philo->table->end_dinner)
     {
+        if (philo->table->end_dinner) 
+            break;
         eat(philo);
         messages(4, philo);
         if (philo->table->end_dinner)

@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 16:42:28 by kali              #+#    #+#             */
-/*   Updated: 2025/04/06 17:17:14 by kali             ###   ########.fr       */
+/*   Updated: 2025/04/08 16:04:57 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void check_death(t_table *table)
     i = 0;
     while (i < table->nb_philos)
     {
-        pthread_mutex_lock(&table->lock_meal);
         now = get_current_time();
         if ((now - table->philos[i].last_eaten) >= table->time_to_die)
         {
@@ -28,10 +27,8 @@ void check_death(t_table *table)
             pthread_mutex_lock(&table->lock_simulation);
             table->end_dinner = true;
             pthread_mutex_unlock(&table->lock_simulation);
-            pthread_mutex_unlock(&table->lock_meal);
             return; 
         }
-        pthread_mutex_unlock(&table->lock_meal);
         i++;
     }
 }
@@ -69,6 +66,8 @@ void *monitor(void *data)
     {
         check_death(table);
         check_all_ate(table);
+        if (table->end_dinner)
+            break;
     }
     return (NULL);
 }

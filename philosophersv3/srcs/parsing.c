@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:45:02 by kali              #+#    #+#             */
-/*   Updated: 2025/04/06 16:00:22 by kali             ###   ########.fr       */
+/*   Updated: 2025/04/08 16:07:03 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ static int is_digit(char c)
     return (c <= '9' && c >= '0');
 }
 
-static const char *checker(const char *str)
+int checker(const char *str, const char **correct_str)
 {
     int len;
-    const char *correct_str;
 
     len = 0;
     while (is_space(*str))
@@ -33,48 +32,54 @@ static const char *checker(const char *str)
     if (*str == '+')
         str++;
     else if (*str == '-')
-        ft_error("No negative numbers!", 1);
+        return (ft_error("No negative numbers!", 1));
     if (!is_digit(*str))
-        ft_error("Only digits!", 1);
-    correct_str = str;
+        return (ft_error("Only digits!", 1));
+    *correct_str = str;
     while(is_digit(*str++))
         len++;
     if (len > 10)
-        ft_error("Too big! INT_MAX is the limit", 1);
-    return (correct_str);
+        return (ft_error("Too big! INT_MAX is the limit", 1));
+    return (0);
 }
 
-static long ft_atoi2(const char *str)
+int ft_atoi2(const char *str, long *result)
 {
     long nb;
+    const char *parsed_str;
     
     nb = 0;
-
-    str = checker(str);
-    while (is_digit(*str))
+    if (checker(str, &parsed_str))
+        return (1);
+    while (is_digit(*parsed_str))
     {
-        nb = (nb * 10) + (*str - 48);
-        str++;
+        nb = (nb * 10) + (*parsed_str - 48);
+        parsed_str++;
     }
     if (nb > INT_MAX)
-        ft_error("Too big! INT_MAX is the limit", 1);
-    return (nb);
+        return ft_error("Too big! INT_MAX is the limit", 1);
+    *result = (int)nb;
+    return (0);
 }
 
-void    parsing(t_table *table, char **av)
+int parsing(t_table *table, char **av)
 {
-    table->nb_philos = ft_atoi2(av[1]);
-    if (table->nb_philos == 0)
-        ft_error("At least indicate one philosopher\n", 1);
-    table->time_to_die = ft_atoi2(av[2]);
-    table->time_to_sleep = ft_atoi2(av[3]);
-    table->time_to_eat = ft_atoi2(av[4]);
-    if (table->time_to_die < 60 
-        || table->time_to_sleep < 60
-        || table->time_to_eat < 60)
-        ft_error("Timestamps >= 60", 1);
+    if (ft_atoi2(av[1], &table->nb_philos) || table->nb_philos == 0)
+        return ft_error("At least indicate one philosopher\n", 1);
+    if (ft_atoi2(av[2], &table->time_to_die))
+        return 1;
+    if (ft_atoi2(av[3], &table->time_to_sleep))
+        return 1;
+    if (ft_atoi2(av[4], &table->time_to_eat))
+        return 1;
+    if (table->time_to_die < 60 || table->time_to_sleep < 60 || table->time_to_eat < 60)
+        return ft_error("Timestamps >= 60", 1);
     if (av[5])
-        table->nb_meals = ft_atoi2(av[5]);
+    {
+        if (ft_atoi2(av[5], &table->nb_meals))
+            return 1;
+    }
     else
         table->nb_meals = -1;
-}
+    return 0;
+}   

@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:32:12 by kali              #+#    #+#             */
-/*   Updated: 2025/04/06 16:36:57 by kali             ###   ########.fr       */
+/*   Updated: 2025/04/08 16:07:31 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_philo
 {
     int         philo_id;
     int         meals_eaten;
-    unsigned long        last_eaten;
+    long        last_eaten;
     t_mutex     *first_fork;
     t_mutex     *second_fork;
     pthread_t   philo_thread;
@@ -50,11 +50,11 @@ typedef struct s_philo
 
 struct  s_table
 {
-    int         nb_philos;
-    unsigned long        time_to_die;
-    unsigned long        time_to_eat;
-    unsigned long        time_to_sleep;
-    int         nb_meals;
+    long         nb_philos;
+    long        time_to_die;
+    long        time_to_eat;
+    long        time_to_sleep;
+    long         nb_meals;
     long        start_dinner;
     bool        end_dinner;
     t_mutex     lock_write;
@@ -67,7 +67,7 @@ struct  s_table
 int main(int ac, char **av);
 
 //PARSING
-void    parsing(t_table *table, char **av);
+int    parsing(t_table *table, char **av);
 
 //INITIALIZATION
 void    init_table(t_table *table);
@@ -80,7 +80,7 @@ void    *dinner(void *data);
 void    *monitor(void *data);
 
 //UTILS
-void    ft_error(const char *str, int nb);
+int    ft_error(const char *str, int nb);
 void    ft_clean(t_table *table);
 long    get_current_time(void);
 void    precise_usleep(long timestamp, t_table *table);
