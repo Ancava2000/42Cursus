@@ -1,5 +1,11 @@
 #include "../include/philo.h"
 
+/*
+	Iterate each philo to check if they are dead, if one is dead,
+	exits the function and the dinner routine, stopping the simulation.
+		1. If check dead return 1 enters condition.
+		2. stop = 1 and return 1. Indicating the monitor and the simulation to stop.
+*/
 int	check_all_dead(t_table *table)
 {
 	unsigned int	i;
@@ -21,6 +27,13 @@ int	check_all_dead(t_table *table)
 	return (0);
 }
 
+/*
+	Function to check if one philo is dead. If it is, returns 1
+	and dead_status = 1 (to avoid entering full or dead function again).
+		1. Dead_time = to calculate if the philo has time to eat before dying.
+		2. If dead time is negative or 0, returns 1 and dead status = 1.
+		3. Check if the philo is not full (if it's full the philo routine has stopped).
+*/
 int	check_dead(t_table *table, unsigned int i)
 {
 	unsigned long long dead_time;
@@ -42,6 +55,10 @@ int	check_dead(t_table *table, unsigned int i)
 	return (0);
 }
 
+/*
+	Function to check full state of each one of the philos. Increase i if philo[i] it's full (full = 1).
+	If the value of i is = to nb_philos, stop = 1, exiting the waiter and, the dinner loop (all philos are full).
+*/
 void	check_all_full(t_table *table)
 {
 	unsigned int	i;
@@ -66,6 +83,12 @@ void	check_all_full(t_table *table)
 	
 }
 
+/*
+	Function to check if one philo is full and change the full variable to indicate it.
+		1. Lock dead and meal mutex because those variables are being checked and changed.
+		2. If the philo is dead or full, it exits the function (preventing them from unnecessary actions).
+		3. If the number of meals_eaten == nb_meals, print message (full), full = 1 and exits the function. 
+*/
 void	check_full(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->table->lock_dead);
