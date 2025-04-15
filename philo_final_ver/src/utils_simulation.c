@@ -9,12 +9,7 @@
 */
 void	messages(int messages, unsigned int id, unsigned long long time, t_table *table)
 {
-	bool	stop;
-
-	pthread_mutex_lock(&table->lock_bool_stop);
-	stop = table->stop_flag;
-	pthread_mutex_unlock(&table->lock_bool_stop);
-	if (!stop)
+	if (!table->stop_flag)
 	{
 		pthread_mutex_lock(&table->lock_write);
 		if (messages == 1)
