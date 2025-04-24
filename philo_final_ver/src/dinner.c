@@ -10,12 +10,12 @@
 */
 void	eat(t_philo *philo)
 {
-	messages(2, philo->philo_id, get_now_time() - philo->table->dinner_start, philo->table);
 	pthread_mutex_lock(&philo->table->lock_meal);
 	philo->last_eaten = get_now_time();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(&philo->table->lock_meal);
 	precise_usleep(philo->table, philo->table->time_to_eat);
+	messages(2, philo->philo_id, get_now_time() - philo->table->dinner_start, philo->table);
 }
 
 // Sleep message, sleep the indicated time.
