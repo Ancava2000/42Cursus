@@ -76,7 +76,7 @@ unsigned long long	get_now_time(void)
 	2. If not, sleep that time * 1000 (just one millisecond).
 	3. If there is an error, change the stop_flag to 1 so the simulation ends and returns -1 to indicate an error.
 */
-unsigned long long	precise_usleep(t_table *table, unsigned long long time)
+long long	precise_usleep(t_table *table, unsigned long long time)
 {
 	if (time >= table->time_to_die)
 		time = table->time_to_die;
