@@ -58,7 +58,7 @@ int					main(int ac, char **av);
 
 //PARSING
 int					atoi_int(const char *str);
-int					atoi_ll(const char *str);
+long long			atoi_ll(const char *str);
 
 //INIT
 int					init_dinner(t_table *table, int ac, char **av);
@@ -82,6 +82,6 @@ void				ft_error(char *message, int fd);
 void				messages(int messages, unsigned int id, unsigned long long time, t_table *table);
 int					ft_clean(t_table *table);
 unsigned long long	get_now_time(void);
-unsigned long long	precise_usleep(t_table *table, unsigned long long time);
+long long	        precise_usleep(t_table *table, unsigned long long time);
 
 #endif
