@@ -8,11 +8,11 @@
 */
 int	parsing(int ac, char **av)
 {
-	int			nb_philos;
-	unsigned long long	time_to_die;
-	unsigned long long	time_to_eat;
-	unsigned long long	time_to_sleep;
-	int			nb_meals;
+	int		nb_philos;
+	long long	time_to_die;
+	long long	time_to_eat;
+	long long	time_to_sleep;
+	int		nb_meals;
 
 	nb_philos = atoi_int(av[1]);
 	time_to_die = atoi_ll(av[2]);
@@ -27,7 +27,7 @@ int	parsing(int ac, char **av)
 	}
 	if (nb_philos < 1 || time_to_die < 1 || time_to_eat < 1
 		|| time_to_sleep < 1)
-		return (ft_error(RED"Indicate more than 1 in arguments\n"RESET, 2), 1);
+		return (ft_error(RED"Incorrect argument\n"RESET, 2), 1);
 	return (0);
 }
 /*	
