@@ -34,7 +34,7 @@ int	atoi_int(const char *str)
 	return (res);
 }
 
-int	atoi_ll(const char *str)
+long long	atoi_ll(const char *str)
 {
 	unsigned int	i;
 	long long		res;
