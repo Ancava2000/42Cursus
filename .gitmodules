@@ -16,3 +16,6 @@
 [submodule "printf"]
 	path = printf
 	url = https://github.com/Ancava2000/printf
+[submodule "push_swap"]
+	path = push_swap
+	url = https://github.com/Ancava2000/push_swap
