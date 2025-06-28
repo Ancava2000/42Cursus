@@ -7,3 +7,6 @@
 [submodule "minitalk"]
 	path = minitalk
 	url = https://github.com/Ancava2000/minitalk
+[submodule "philosophers"]
+	path = philosophers
+	url = https://github.com/Ancava2000/philosophers
