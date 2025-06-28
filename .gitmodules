@@ -1,3 +1,6 @@
 [submodule "Get-next-line"]
 	path = Get-next-line
 	url = https://github.com/Ancava2000/Get-next-line
+[submodule "libft"]
+	path = libft
+	url = https://github.com/Ancava2000/libft
