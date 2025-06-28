@@ -10,3 +10,6 @@
 [submodule "philosophers"]
 	path = philosophers
 	url = https://github.com/Ancava2000/philosophers
+[submodule "pipex"]
+	path = pipex
+	url = https://github.com/Ancava2000/pipex
