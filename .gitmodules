@@ -13,3 +13,6 @@
 [submodule "pipex"]
 	path = pipex
 	url = https://github.com/Ancava2000/pipex
+[submodule "printf"]
+	path = printf
+	url = https://github.com/Ancava2000/printf
