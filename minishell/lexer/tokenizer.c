@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 12:29:09 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/07/26 08:18:29 by kali             ###   ########.fr       */
+/*   Updated: 2025/08/06 13:29:28 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,9 @@ void	check_word(t_mini *mini, char **line)
 
 int	count_tokens(t_mini *mini, char *line)
 {
+	char	*original_line;
+
+	original_line = ft_strdup(line);
 	while (*line)
 	{
 		while (*line == 32
@@ -100,22 +103,11 @@ int	count_tokens(t_mini *mini, char *line)
 		else
 			check_word(mini, &line);
 	}
-	//print_tokens(mini);
-	if (check_syntax(line))
+	if (check_syntax(original_line))
+	{
+		ft_error("Wrong syntax");
+		free(original_line);
 		return (1);
+	}
 	return (0);
 }
-
-/*
-void	print_tokens(t_mini *mini)
-{
-	t_token	*token;
-
-	token = mini->token_list;
-	while (token)
-	{
-		printf("TOKEN: '%s' | TYPE: %d\n", token->token_name, token->token_type);
-		token = token->next;
-	}
-}
-*/

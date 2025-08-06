@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 06:03:25 by kali              #+#    #+#             */
-/*   Updated: 2025/07/25 14:23:57 by kali             ###   ########.fr       */
+/*   Updated: 2025/08/06 15:02:13 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ char	*resolve_value(t_mini *mini, char **line)
 	char	*var_to_expand;
 	int		i;
 
-	if (**line == '?' && ++*line)
+	if (**line == '?' && ++(*line))
 		value = ft_itoa(mini->exit_status);
-	else if (**line == '0' && ++*line)
+	else if (**line == '0' && ++(*line))
 		value = ft_strdup(mini -> program_name);
-	else if (**line > '0' && **line <= '9' && ++*line)
+	else if (**line > '0' && **line <= '9' && ++(*line))
 		value = ft_strdup("");
 	else
 	{
 		i = 0;
 		var_to_expand = ft_calloc(sizeof(char), 4096);
-		while (ft_isalnum((*line) || **line == '_'))
+		while (ft_isalnum(**line) || **line == '_')
 			(var_to_expand)[i++] = *(*line)++;
 		value = get_env_item(mini -> envp, var_to_expand);
 		free(var_to_expand);

@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 12:29:14 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/07/26 13:48:05 by kali             ###   ########.fr       */
+/*   Updated: 2025/08/06 13:31:36 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	handle_double_quotes(t_mini *mini, char **line, char **word)
 	if (**line == '\"')
 		(*line)++;
 	else
-		ft_error("Quote not closed");
+		return (1);
 	return (j);
 }
 
@@ -78,14 +78,15 @@ int	handle_single_quotes(char **line, char **word)
 	if (**line == '\'')
 		(*line)++;
 	else
-		ft_error("Quote not closed");
+		return (1);
 	return (j);
 }
 
-void	lexer(t_mini *mini, char *line)
+int	lexer(t_mini *mini, char *line)
 {
 	if (count_quotes(line))
-		ft_error("Wrong number of quotes");
+		return (ft_error("Wrong number of quotes"));
 	if (count_tokens(mini, line))
-		ft_error("Error with tokens");
+		return (ft_error("Error with tokens"));
+	return (0);
 }

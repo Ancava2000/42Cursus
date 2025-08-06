@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 12:25:05 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/07/28 12:15:58 by kali             ###   ########.fr       */
+/*   Updated: 2025/08/06 13:29:00 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,15 @@ int	main(int ac, char **av, char **envp)
 			break ;
 		}
 		add_history(line);
-		lexer(&mini, line);
+		if (lexer(&mini, line) != 0)
+		{
+			free(line);
+			continue;
+		}
 		parser(&mini);
 		execute(&mini);
 		cleanup_arrays(&mini);
 		free(line);
-		//print_commands(&mini);
 	}
 	free_mini(&mini);
 	return (0);

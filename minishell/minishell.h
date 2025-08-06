@@ -6,7 +6,7 @@
 /*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 12:29:33 by acarro-v          #+#    #+#             */
-/*   Updated: 2025/08/05 14:25:09 by kali             ###   ########.fr       */
+/*   Updated: 2025/08/06 14:47:38 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ typedef struct s_mini
 int			main(int ac, char **av, char **envp);
 
 // Lexer
-void		lexer(t_mini *mini, char *line);
+int			lexer(t_mini *mini, char *line);
 int			count_tokens(t_mini *mini, char *line);
 
 // Lexer utils
@@ -128,7 +128,5 @@ void		free_commands(t_command *cmd);
 void		free_tokens(t_token *token);
 void		free_array(char	**str);
 void		free_mini(t_mini *mini);
-//void		print_tokens(t_mini *mini);
-//void		print_commands(t_mini *mini);
 
 #endif
