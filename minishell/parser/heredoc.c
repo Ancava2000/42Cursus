@@ -94,7 +94,7 @@ int	ft_heredoc(t_mini *mini, char *delimiter, int expander)
 		heredoc_child(mini, delimiter, fd, expander);
 	else
 	{
-		signal(SIGINT, SIG_IGN);
+		signal(SIGINT, ctrl_c_signal);
 		waitpid(pid, &status, 0);
 	}
 	close(fd[1]);
