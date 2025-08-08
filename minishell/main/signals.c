@@ -14,7 +14,7 @@
 
 void	ctrl_d_signal(int sig)
 {
-	printf("exit\n");
+	printf("Quit\n");
 	g_signal = sig;
 	kill(0, SIGINT);
 }
