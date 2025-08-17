@@ -54,14 +54,6 @@ char	*add_string_to_word(char *new_value, char *word, int new_value_length)
 	return (new_word);
 }
 
-//se usa doble ** porque se quiere modificar la variable fuera de la funcion
-/*
-pillar valor.
-pillar longitud valor.
-combinar valores.
-añadir a la palabra el valor expandido más la longitud nueva y mínima
-*/
-
 int	expand_word(t_mini *mini, char **line, char **word)
 {
 	int		value_length;
