@@ -1,0 +1,134 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tokenizer.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acarro-v <acarro-v@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/15 13:18:17 by emilgarc          #+#    #+#             */
+/*   Updated: 2025/08/17 13:27:51 by acarro-v         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../minishell.h"
+
+int	check_syntax(char *line)
+{
+	char	*aux;
+	int		len;
+	char	last_char;
+
+	aux = line;
+	while (*aux && (*aux == ' ' || (*aux > 8 && *aux < 14)))
+		aux++;
+	if (*aux == '|'
+		|| (*aux == '<' && *(aux + 1) != '<')
+		|| (*aux == '>' && *(aux + 1) != '>'))
+		return (2);
+	len = ft_strlen(aux);
+	last_char = aux[len - 1];
+	if (last_char == '|' || last_char == '<' || last_char == '>')
+		return (2);
+	return (check_syntax_double(aux));
+}
+
+void	insert_node(t_mini *mini, char *line, int t_type)
+{
+	t_token	*new;
+	t_token	*temp;
+
+	new = malloc(sizeof(t_token));
+	if (!new)
+	{
+		free(new);
+		exit (1);
+	}
+	new -> token_name = ft_strdup(line);
+	new -> token_type = t_type;
+	new -> next = NULL;
+	if (!mini -> token_list)
+		mini -> token_list = new;
+	else
+	{
+		temp = mini -> token_list;
+		while (temp -> next)
+			temp = temp -> next;
+		temp -> next = new;
+	}
+}
+
+void	token_type(t_mini *mini, char **line)
+{
+	int	index;
+
+	if (**line == '<' && *(*line + 1) == '<' && ++*line && ++*line)
+	{
+		index = 0;
+		while ((*line)[index] == 32
+		|| ((*line)[index] > 8 && (*line)[index] < 14))
+			index++;
+		if ((*line)[index] == '\'' || (*line)[index] == '\"')
+			insert_node(mini, "<<", 1);
+		else
+			insert_node(mini, "<$", 1);
+	}
+	else if (**line == '>' && *(*line + 1) == '>' && ++*line && ++*line)
+		insert_node(mini, ">>", 1);
+	else if (**line == '<' && ++*line)
+		insert_node(mini, "<", 1);
+	else if (**line == '>' && ++*line)
+		insert_node(mini, ">", 1);
+	else if (**line == '|' && ++*line)
+		insert_node(mini, "|", 0);
+}
+
+void	check_word(t_mini *mini, char **line)
+{
+	int		j;
+	char	*word;
+
+	j = 0;
+	word = ft_calloc(sizeof(char), 4096);
+	while (**line && **line != ' ' && **line != '<'
+		&& **line != '>' && **line != '|')
+	{
+		if (**line == '\"' && ++*line)
+			j += handle_double_quotes(mini, line, &word, j);
+		else if (**line == '\'' && ++*line)
+			j += handle_single_quotes(line, &word, j);
+		else if (**line == '$' && (*(*line + 1) == '?'
+				|| ft_isalnum(*(*line + 1))) && ++*line)
+			j += expand_word(mini, line, &word);
+		else
+			word[j++] = *(*line)++;
+	}
+	if (j > 0)
+		insert_node(mini, word, 2);
+	free(word);
+}
+
+int	count_tokens(t_mini *mini, char *line)
+{
+	char	*original_line;
+
+	original_line = ft_strdup(line);
+	while (*line)
+	{
+		while (*line == 32
+			|| (*line > 8 && *line < 14))
+			line++;
+		if (*line == '<' || *line == '>'
+			|| *line == '|')
+			token_type(mini, &line);
+		else
+			check_word(mini, &line);
+	}
+	if (check_syntax(original_line))
+	{
+		ft_error("Wrong syntax");
+		free(original_line);
+		return (2);
+	}
+	free(original_line);
+	return (0);
+}
