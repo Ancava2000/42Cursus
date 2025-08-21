@@ -4,9 +4,6 @@
 [submodule "libft"]
 	path = libft
 	url = https://github.com/Ancava2000/libft
-[submodule "minishell"]
-	path = minishell
-	url = https://github.com/Ancava2000/minishell
 [submodule "minitalk"]
 	path = minitalk
 	url = https://github.com/Ancava2000/minitalk
