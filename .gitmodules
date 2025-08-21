@@ -22,3 +22,6 @@
 [submodule "so_long"]
 	path = so_long
 	url = https://github.com/Ancava2000/so_long
+[submodule "minishell"]
+	path = minishell
+	url = https://github.com/Ancava2000/minishell
