@@ -25,3 +25,6 @@
 [submodule "minishell"]
 	path = minishell
 	url = https://github.com/Ancava2000/minishell
+[submodule "Net-Practice"]
+	path = Net-Practice
+	url = https://github.com/Ancava2000/Net-Practice
